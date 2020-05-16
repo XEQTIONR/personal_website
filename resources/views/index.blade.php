@@ -313,12 +313,6 @@
     </div>
 </section>
 
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-<div class="scroll-to-top d-lg-none position-fixed ">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
-</div>
 
 <!-- Portfolio Modals -->
 
@@ -564,11 +558,11 @@
 <script src="jquery.easing.min.js"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="jqBootstrapValidation.js"></script>
-<script src="contact_me.js"></script>
+{{--<script src="jqBootstrapValidation.js"></script>--}}
+{{--<script src="contact_me.js"></script>--}}
 
 <!-- Custom scripts for this template -->
-<script src="freelancer.min.js"></script>
+<script src="freelancer.js"></script>
 
 </body>
 
