@@ -19,7 +19,7 @@
     <link href="freelancer.css" rel="stylesheet">
 
     <style>
-        .klas{
+        .avatar{
             width: 190px;
             height: 190px;
             /*border: 2px dashed yellow;*/
@@ -29,6 +29,19 @@
             {{--background-image: url('{{asset('img/avatars/2.jpg')}}');--}}
             background-size: 210px;
             transition: background-image 0.5s ease-in-out;
+        }
+
+        .companies{
+            /*border : 2px dashed #DDD;*/
+            box-shadow: 5px 5px 10px #999;
+            min-width : 200px;
+            min-height: 200px;
+
+        }
+
+        .companies:hover{
+            box-shadow: none;
+            /*border: 2px solid #EEEE00;*/
         }
     </style>
 
@@ -65,7 +78,7 @@
     <div class="container d-flex align-items-center flex-column">
 
         <!-- Masthead Avatar Image -->
-        <div class="d-block p-0 klas mb-5">
+        <div class="d-block p-0 avatar mb-5">
         </div>
 
         <!-- Masthead Heading -->
@@ -88,7 +101,7 @@
 
 <!-- Portfolio Section -->
 <section class="page-section portfolio" id="portfolio">
-    <div class="container">
+    <div class="container-fluid ">
 
         <!-- Portfolio Section Heading -->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Work Experience</h2>
@@ -103,80 +116,121 @@
         </div>
 
         <!-- Portfolio Grid Items -->
-        <div class="row">
+{{--        <div class="row justify-content-center">--}}
 
-            <!-- Portfolio Item 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+{{--            <!-- Portfolio Item 1 -->--}}
+{{--            <div class="col-2">--}}
+{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">--}}
+{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
+{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
+{{--                            <i class="fas fa-plus fa-3x"></i>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/ariad.png')}}" alt="">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <!-- Portfolio Item 2 -->--}}
+{{--            <div class="col-2">--}}
+{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">--}}
+{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
+{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
+{{--                            <i class="fas fa-plus fa-3x"></i>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/leverageit.png')}}" alt="">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <!-- Portfolio Item 3 -->--}}
+{{--            <div class="col-2">--}}
+{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">--}}
+{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
+{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
+{{--                            <i class="fas fa-plus fa-3x"></i>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/intertracnanologocolorw.bmp')}}" alt="">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <!-- Portfolio Item 4 -->--}}
+{{--            <div class="col-2">--}}
+{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">--}}
+{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
+{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
+{{--                            <i class="fas fa-plus fa-3x"></i>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/revivalpoint.png')}}" alt="">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <!-- Portfolio Item 5 -->--}}
+{{--            <div class="col-2">--}}
+{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">--}}
+{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
+{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
+{{--                            <i class="fas fa-plus fa-3x"></i>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/yorku2.png')}}" alt="">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+        <div class="row justify-content-center align-items-center">
+
+{{--            <div class="w-100 d-flex justify-content-center align-items-center">--}}
+                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#RevivalPointModal">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/revivalpoint.png')}}" alt="">
+
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
-                </div>
-            </div>
 
-            <!-- Portfolio Item 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                </div>
+
+                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#LeverageITModal">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/cake.png" alt="">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/leverageit.png')}}" alt="">
                 </div>
-            </div>
 
-            <!-- Portfolio Item 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#AriadModal">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/circus.png" alt="">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/ariad.png')}}" alt="">
                 </div>
-            </div>
 
-            <!-- Portfolio Item 4 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#IntertracNanoModal">
+
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/game.png" alt="">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/intertracnanologocolorw.bmp')}}" alt="">
                 </div>
-            </div>
 
-            <!-- Portfolio Item 5 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#YorkUModal">
+
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/safe.png" alt="">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/yorku2.png')}}" alt="">
                 </div>
-            </div>
-
-            <!-- Portfolio Item 6 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="img/portfolio/submarine.png" alt="">
-                </div>
-            </div>
-
+{{--            </div>--}}
         </div>
         <!-- /.row -->
 
@@ -334,8 +388,8 @@
 <!-- Portfolio Modals -->
 
 <!-- Portfolio Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+<div class="portfolio-modal modal fade" id="RevivalPointModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">
@@ -373,8 +427,8 @@
 </div>
 
 <!-- Portfolio Modal 2 -->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+<div class="portfolio-modal modal fade" id="LeverageITModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">
@@ -412,8 +466,8 @@
 </div>
 
 <!-- Portfolio Modal 3 -->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+<div class="portfolio-modal modal fade" id="AriadModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">
@@ -451,8 +505,8 @@
 </div>
 
 <!-- Portfolio Modal 4 -->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+<div class="portfolio-modal modal fade" id="IntertracNanoModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">
@@ -490,8 +544,8 @@
 </div>
 
 <!-- Portfolio Modal 5 -->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+<div class="portfolio-modal modal fade" id="YorkUModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">
@@ -514,45 +568,6 @@
                             </div>
                             <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded mb-5" src="img/portfolio/safe.png" alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Portfolio Modal 6 -->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/submarine.png" alt="">
                             <!-- Portfolio Modal - Text -->
                             <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -603,7 +618,7 @@
 
 
         $(document).ready(function(){
-            $('.klas').css('background-image', 'url('+image_files[0].src+')');
+            $('.avatar').css('background-image', 'url('+image_files[0].src+')');
         });
 
         var index = 0;
@@ -620,7 +635,7 @@
             index = temp;
 
 
-            $('.klas').css('background-image', 'url('+image_files[index].src+')');
+            $('.avatar').css('background-image', 'url('+image_files[index].src+')');
 
         }, 5000);
 
