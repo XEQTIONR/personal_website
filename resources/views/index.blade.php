@@ -18,6 +18,20 @@
     <!-- Theme CSS -->
     <link href="freelancer.css" rel="stylesheet">
 
+    <style>
+        .klas{
+            width: 190px;
+            height: 190px;
+            /*border: 2px dashed yellow;*/
+            border-radius: 50%;
+            overflow: hidden;
+            background-position: center;
+            {{--background-image: url('{{asset('img/avatars/2.jpg')}}');--}}
+            background-size: 210px;
+            transition: background-image 0.5s ease-in-out;
+        }
+    </style>
+
 </head>
 
 <body id="page-top">
@@ -25,7 +39,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">{{config('app.name')}}</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -33,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Work Experience</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
@@ -51,10 +65,11 @@
     <div class="container d-flex align-items-center flex-column">
 
         <!-- Masthead Avatar Image -->
-        <img class="masthead-avatar mb-5" src="img/avataaars.svg" alt="">
+        <div class="d-block p-0 klas mb-5">
+        </div>
 
         <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+        <h1 class="masthead-heading text-uppercase mb-0">{{config('app.name')}}</h1>
 
         <!-- Icon Divider -->
         <div class="divider-custom divider-light">
@@ -66,7 +81,7 @@
         </div>
 
         <!-- Masthead Subheading -->
-        <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+        <p class="masthead-subheading font-weight-light mb-0">Full Stack Devloper - Software Developer - Backend Engineer</p>
 
     </div>
 </header>
@@ -76,7 +91,7 @@
     <div class="container">
 
         <!-- Portfolio Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Work Experience</h2>
 
         <!-- Icon Divider -->
         <div class="divider-custom">
@@ -274,24 +289,26 @@
             <!-- Footer Location -->
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Location</h4>
-                <p class="lead mb-0">2215 John Daniel Drive
-                    <br>Clark, MO 65243</p>
+                <p class="lead mb-0">Toronto
+                    <br>ON, M4C</p>
             </div>
 
             <!-- Footer Social Icons -->
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Around the Web</h4>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
-                    <i class="fab fa-fw fa-facebook-f"></i>
+
+                <a class="btn btn-outline-light btn-social mx-1" href="https://github.com{{config('app.github')}}">
+                    <i class="fab fa-fw fa-github"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
-                    <i class="fab fa-fw fa-twitter"></i>
-                </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
+
+                <a class="btn btn-outline-light btn-social mx-1" href="https://linkedin.com{{config('app.linkedin')}}">
                     <i class="fab fa-fw fa-linkedin-in"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#">
-                    <i class="fab fa-fw fa-dribbble"></i>
+                <a class="btn btn-outline-light btn-social mx-1" href="skype:{{config('app.skype')}}?chat">
+                    <i class="fab fa-fw fa-skype"></i>
+                </a>
+                <a class="btn btn-outline-light btn-social mx-1" href="mailto:{{config('app.email_address')}}">
+                    <i class="fas fa-fw fa-envelope"></i>
                 </a>
             </div>
 
@@ -309,7 +326,7 @@
 <!-- Copyright Section -->
 <section class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>Copyright &copy; Your Website 2019</small>
+        <small>Copyright &copy; {{config('app.name')}} 2020</small>
     </div>
 </section>
 
@@ -563,6 +580,52 @@
 
 <!-- Custom scripts for this template -->
 <script src="freelancer.js"></script>
+
+<script>
+    (function($){
+
+
+
+        console.log("KUSTOM KODE");
+
+        var images = [];
+
+        @foreach($files as $file)
+            images.push('{{$file}}')
+        @endforeach
+
+        var image_files= [];
+
+        for (var i = 0; i < images.length; i++) {
+            image_files[i] = new Image();
+            image_files[i].src = images[i];
+        }
+
+
+        $(document).ready(function(){
+            $('.klas').css('background-image', 'url('+image_files[0].src+')');
+        });
+
+        var index = 0;
+        var changing = false;
+
+
+        let timerId = setInterval(function(){
+
+            let temp = index;
+
+            while(temp== index)
+                temp = (Math.floor(Math.random() * 100) % image_files.length);
+
+            index = temp;
+
+
+            $('.klas').css('background-image', 'url('+image_files[index].src+')');
+
+        }, 5000);
+
+    })(jQuery)
+</script>
 
 </body>
 
