@@ -20,5 +20,16 @@ class HomepageTest extends TestCase
         $response->assertStatus(200);
 
         $response->assertViewIs('index');
+
+
+    }
+
+    public function testAvatarsReturned()
+    {
+        $response = $this->get('/');
+
+        $data = $response->getOriginalContent()->getData();
+
+        $this->assertCount(12, $data['files'], 'Count not match');
     }
 }
