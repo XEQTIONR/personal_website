@@ -12,9 +12,12 @@ class MainController extends Controller
 
         $files = Storage::disk('avatars')->files();
 
-        //dd($files);
+        $public_paths = [];
 
-        return view('index', compact('files'));
+        foreach($files as $file)
+            $public_paths[] = Storage::disk('avatars')->url($file);
+
+        return view('index', ['files' => $public_paths]);
     }
     //
 }
