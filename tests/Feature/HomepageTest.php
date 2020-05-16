@@ -31,5 +31,9 @@ class HomepageTest extends TestCase
         $data = $response->getOriginalContent()->getData();
 
         $this->assertCount(12, $data['files'], 'Count not match');
+
+        for ($i=0; $i<count($data['files']); $i++)
+            $this->assertRegExp('/\/img\/avatars\/.+\.jpg/', $data['files'][$i]);
+
     }
 }
