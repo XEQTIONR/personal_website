@@ -43,6 +43,7 @@
             box-shadow: none;
             /*border: 2px solid #EEEE00;*/
         }
+
     </style>
 
 </head>
@@ -187,7 +188,7 @@
 
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-plus fa-3x"></i>
+                            <i class="fas fa-eye fa-3x"></i>
                         </div>
                     </div>
 
@@ -196,7 +197,7 @@
                 <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#LeverageITModal">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-plus fa-3x"></i>
+                            <i class="fas fa-eye fa-3x"></i>
                         </div>
                     </div>
                     <img class="img-fluid" src="{{asset('/img/work_logos/leverageit.png')}}" alt="">
@@ -205,7 +206,7 @@
                 <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#AriadModal">
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-plus fa-3x"></i>
+                            <i class="fas fa-eye fa-3x"></i>
                         </div>
                     </div>
                     <img class="img-fluid" src="{{asset('/img/work_logos/ariad.png')}}" alt="">
@@ -215,20 +216,20 @@
 
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-plus fa-3x"></i>
+                            <i class="fas fa-eye fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="{{asset('/img/work_logos/intertracnanologocolorw.bmp')}}" alt="">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/intertracnano.bmp')}}" alt="">
                 </div>
 
                 <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#YorkUModal">
 
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-plus fa-3x"></i>
+                            <i class="fas fa-eye fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid" src="{{asset('/img/work_logos/yorku2.png')}}" alt="">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/yorku.png')}}" alt="">
                 </div>
 {{--            </div>--}}
         </div>
@@ -256,7 +257,7 @@
         <!-- About Section Content -->
         <div class="row">
             <div class="col-lg-4 ml-auto">
-                <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
+                <p class="lead">I am a Full-stack web developer</p>
             </div>
             <div class="col-lg-4 mr-auto">
                 <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
@@ -392,28 +393,75 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
             </button>
-            <div class="modal-body text-center">
-                <div class="container">
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-12 px-0">
                             <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+{{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
                             <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
+{{--                            <div class="divider-custom">--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                                <div class="divider-custom-icon">--}}
+{{--                                    <i class="fas fa-star"></i>--}}
+{{--                                </div>--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/cabin.png" alt="">
+                            <img class="img-fluid rounded" src="img/work_logos/revivalpoint_lg.png" alt="">
                             <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <p class="mb-4 mt-4 px-3">A company that sells various health supplements exclusively through their online stores.</p>
+
+                            <div class="w-100">
+                                <dl class="row  mx-5">
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">Full-stack Developer</dd>
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Contribution :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">
+                                        I was brought in mainly as a backend engineer. During my time here we achieved some of the company's
+                                        mission critical goals such as <br>
+                                        <ul>
+                                            <li class="text-left">Migrating existing sites/funnels and backend infrastructure over to AWS.</li>
+                                            <li class="text-left">Performing improvements to existing sites and their backend API.</li>
+                                            <li class="text-left">Optimizing sales sites/funnels for SEO.</li>
+                                            <li class="text-left">Develop new features and debug existing backend software infrastructure</li>
+                                            <li class="text-left">Integrate 3rd party APIs.</li>
+                                            <li class="text-left">Build and maintain CI pipelines.</li>
+                                            <li class="text-left">Setup automatic periodic database backups</li>
+                                            <li class="text-left">And a lot more miscellaneous DevOps</li>
+                                        </ul>
+
+                                        During my time as project lead, I had to manage a small team of 3rd party developers.
+                                        This involved <br>
+                                        <ul>
+                                            <li class="text-left">Meetings with other departments, vendors, and developers</li>
+                                            <li class="text-left">Setting up deployment environments for other developers.</li>
+                                            <li class="text-left">Managing work via Agile methodology.</li>
+                                            <li class="text-left">And lots of Code Reviews.</li>
+                                        </ul>
+
+
+
+                                    </dd>
+{{--                                </dl>--}}
+
+{{--                                <dl class="row mx-5">--}}
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Impact :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">
+                                        <ul>
+
+                                        <li class="text-left">Successfully migrated existing company sites over to AWS which reduced server hosting costs.</li>
+                                        <li class="text-left">Integrated fullfillment provider's APIs into existing software infrastructure which improved sales estimates by 10%</li>
+                                        <li class="text-left">Delivered new software features as requested by management on time.</li>
+                                        <li class="text-left">Safety and integrity of data was ensured due to the newly created periodic backups and error logging.</li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
@@ -431,28 +479,85 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
             </button>
-            <div class="modal-body text-center">
-                <div class="container">
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-12 px-0">
                             <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
+                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                        <!-- Icon Divider -->
+
                             <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt="">
+                            <img class="img-fluid rounded " src="img/work_logos/leverageit_lg.png" alt="">
+
                             <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+
+                            <p class="mb-4 px-3 mt-4">A software development company that works with start-ups.</p>
+
+                                                        <div class="w-100">
+                            <dl class="row  mx-5">
+                                <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
+                                <dd class="col-md-8 col-lg-9 text-md-left">Senior Software Developer</dd>
+                                <dt class="col-md-4 col-lg-3 text-md-right">My Contribution :</dt>
+                                <dd class="col-md-8 col-lg-9 text-md-left">
+
+                                    <p>I had the opportunity to work on a number of interesting startup projects, developing new features
+                                    for their web/mobile apps and backend infrastructure.</p>
+
+                                    <ul>
+                                        <li class="text-left">
+                                        Implemented various 3rd party APIs such as payment processing (Stripe), geo-location (Google Maps) etc.
+
+                                        </li>
+                                        <li class="text-left">
+                                        Developed various parts of the front end of said applications using AngularJS and/or VueJS.
+
+                                        </li>
+                                        <li class="text-left">
+
+                                        Designed database schemas (MySQL) and wrote migrations required to implement new features for said apps.
+                                        </li>
+                                        <li class="text-left">
+
+                                         Developed back-end RESTful APIs for complex commercial apps for clients using PHP and Laravel.
+                                        </li>
+                                        <li class="text-left">
+                                        Leveraged AWS Cloud computing resources (EC2, S3, Lambda, CloudFront) to develop custom solutions.
+
+                                        </li>
+                                        <li class="text-left">
+                                        Pushed the team to adopt Gitflow which reduced merged conflicts by 50% and sped up release cycles.
+
+                                        </li>
+                                    </ul>
+
+
+
+                                </dd>
+                                <dt class="col-md-4 col-lg-3 text-md-right">My Impact :</dt>
+                                <dd class="col-md-8 col-lg-9 text-md-left">
+                                    <ul>
+                                        <li class="text-left">Lead a small team of developers on a number of successful projects.</li>
+                                        <li class="text-left">Worked on core-features on a number of different apps.</li>
+                                        <li class="text-left">Was able to instill good work practices into junior developers.</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+
+{{--                            <dl class="row mx-5">--}}
+{{--                                <dt class="col-md-4 col-lg-3 text-md-right">My Impact :</dt>--}}
+{{--                                <dd class="col-md-8 col-lg-9 text-md-left">--}}
+
+
+
+{{--                                </dd>--}}
+{{--                            </dl>--}}
+                                                        </div>
+
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
@@ -470,28 +575,61 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
             </button>
-            <div class="modal-body text-center">
-                <div class="container">
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-12 px-0">
                             <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
+                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                        <!-- Icon Divider -->
+{{--                            <div class="divider-custom">--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                                <div class="divider-custom-icon">--}}
+{{--                                    <i class="fas fa-star"></i>--}}
+{{--                                </div>--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/circus.png" alt="">
+                            <img class="img-fluid rounded" src="img/work_logos/ariad-lg.jpg" alt="">
                             <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+
+                            <p class="mb-4 mt-4 px-3">A digital marketing company that works with client data.</p>
+
+                            <div class="w-100">
+                                <dl class="row  mx-5">
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">Full-stack Developer</dd>
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Contribution :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">
+
+                                        I was hired as a full-stack developer. I worked on a number of sites and microsites for clients.
+
+                                        <ul>
+                                            <li class="text-left">
+                                            Worked with the creative team to turn designs into full functional WordPress builds.
+                                            </li>
+                                            <li class="text-left">
+                                            Designed and implemented various microsites for clients in Lumen micro-framework complete with unit-tests.
+                                            </li>
+                                            <li class="text-left">
+                                            Performed various DevOps tasks such as setting up servers, backing up databases, writing CI pipelines, setting up Docker containers, etc.
+                                            </li>
+                                            <li class="text-left">
+                                            Worked in an environment where the expectation was to always innovate and improve current technologies and work practices. This involved activities such as code-reviews, pair-programming, and weekly development meetings.
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                    {{--                                </dl>--}}
+
+                                    {{--                                <dl class="row mx-5">--}}
+                                </dl>
+                            </div>
+
+
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
@@ -509,28 +647,64 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
             </button>
-            <div class="modal-body text-center">
-                <div class="container">
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-12 px-0">
                             <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
+                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                        <!-- Icon Divider -->
+{{--                            <div class="divider-custom">--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                                <div class="divider-custom-icon">--}}
+{{--                                    <i class="fas fa-star"></i>--}}
+{{--                                </div>--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/game.png" alt="">
+                            <img class="img-fluid rounded" src="img/work_logos/intertracnano_lg.png" alt="">
                             <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+
+                            <p class="mb-4 mt-4 px-3">A personal client for whom I built a custom stock management tool.
+
+                            </p>
+
+                            <div class="w-100 mt-4">
+                                <dl class="row  mx-5">
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">Full-stack Developer</dd>
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Contribution :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">
+
+                                        I was hired to see this project out from start to finish. This involved
+
+                                        <ul>
+                                            <li class="text-left">
+                                                Several meetings to gather project requirements and later for feedback.
+                                            </li>
+                                            <li class="text-left">
+                                                Designing database schema, built Laravel application (LAMP stack) in iterations based on customer feedback.
+                                            </li>
+                                            <li class="text-left">
+                                                Building front-end VueJS application.
+                                            </li>
+                                            <li class="text-left">
+                                                Deploying web application on to staging and production servers.
+                                            </li>
+                                            <li class="text-left">
+                                                Providing periodical support from time to time.
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                    {{--                                </dl>--}}
+
+                                    {{--                                <dl class="row mx-5">--}}
+                                </dl>
+                            </div>
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
@@ -548,28 +722,55 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
             </button>
-            <div class="modal-body text-center">
-                <div class="container">
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-12">
                             <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
+                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                        <!-- Icon Divider -->
+{{--                            <div class="divider-custom">--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                                <div class="divider-custom-icon">--}}
+{{--                                    <i class="fas fa-star"></i>--}}
+{{--                                </div>--}}
+{{--                                <div class="divider-custom-line"></div>--}}
+{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="img/portfolio/safe.png" alt="">
+                            <img class="img-fluid rounded" src="img/work_logos/yorku_lg.png" alt="">
                             <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+
+                            <div class="w-100 mt-4">
+                                <dl class="row  mx-5">
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">Full-stack Developer</dd>
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Contribution :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">
+
+                                        <ul>
+                                            <li class="text-left">
+                                                Maintained various websites written in PHP being populated by a MySQL Database.
+                                            </li>
+                                            <li class="text-left">
+                                                Built and deployed custom Wordpress solutions as indicated by project outlines.
+                                            </li>
+                                            <li class="text-left">
+                                                Wrote BASH scripts to perform various tasks such as periodic data backups, data sanitization of input files, etc.
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                    {{--                                </dl>--}}
+
+                                    {{--                                <dl class="row mx-5">--}}
+                                </dl>
+                            </div>
+
+
+
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
