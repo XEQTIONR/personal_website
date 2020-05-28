@@ -1098,6 +1098,7 @@
 
         $(document).ready(function(){
             $('.avatar').css('background-image', 'url('+image_files[0].src+')');
+            $('[data-toggle="tooltip"]').tooltip();
         });
 
         var index = 0;
@@ -1118,7 +1119,7 @@
 
         }, 5000);
 
-    })(jQuery)
+    })(jQuery);
 </script>
 
 </body>
