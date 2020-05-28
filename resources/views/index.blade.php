@@ -63,6 +63,11 @@
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Work Experience</a>
                 </li>
+
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#projects">Projects</a>
+                </li>
+
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
                 </li>
@@ -101,7 +106,7 @@
 </header>
 
 <!-- Portfolio Section -->
-<section class="page-section portfolio" id="portfolio">
+<section class="page-section portfolio" style="min-height: 95vh" id="portfolio">
     <div class="container-fluid ">
 
         <!-- Portfolio Section Heading -->
@@ -117,69 +122,6 @@
         </div>
 
         <!-- Portfolio Grid Items -->
-{{--        <div class="row justify-content-center">--}}
-
-{{--            <!-- Portfolio Item 1 -->--}}
-{{--            <div class="col-2">--}}
-{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">--}}
-{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
-{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
-{{--                            <i class="fas fa-plus fa-3x"></i>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/ariad.png')}}" alt="">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <!-- Portfolio Item 2 -->--}}
-{{--            <div class="col-2">--}}
-{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">--}}
-{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
-{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
-{{--                            <i class="fas fa-plus fa-3x"></i>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/leverageit.png')}}" alt="">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <!-- Portfolio Item 3 -->--}}
-{{--            <div class="col-2">--}}
-{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">--}}
-{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
-{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
-{{--                            <i class="fas fa-plus fa-3x"></i>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/intertracnanologocolorw.bmp')}}" alt="">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <!-- Portfolio Item 4 -->--}}
-{{--            <div class="col-2">--}}
-{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">--}}
-{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
-{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
-{{--                            <i class="fas fa-plus fa-3x"></i>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/revivalpoint.png')}}" alt="">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <!-- Portfolio Item 5 -->--}}
-{{--            <div class="col-2">--}}
-{{--                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">--}}
-{{--                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">--}}
-{{--                        <div class="portfolio-item-caption-content text-center text-white">--}}
-{{--                            <i class="fas fa-plus fa-3x"></i>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <img class="img-fluid" src="{{asset('/img/work_logos/yorku2.png')}}" alt="">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
         <div class="row justify-content-center align-items-center">
 
 {{--            <div class="w-100 d-flex justify-content-center align-items-center">--}}
@@ -236,10 +178,66 @@
         <!-- /.row -->
 
     </div>
+
+</section>
+
+<section class="page-section portfolio"  id="projects" style="background-color: #1ECBE1; min-height: 95vh">
+    <div class="container-fluid">
+
+        <!-- Portfolio Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Personal Projects</h2>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-star text-white"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- Portfolio Grid Items -->
+        <div class="row justify-content-center align-items-center">
+
+            {{--            <div class="w-100 d-flex justify-content-center align-items-center">--}}
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#StripekartModal">
+                <img class="img-fluid" src="{{asset('/img/project_logos/stripekart_sq.png')}}" alt="">
+
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#DaGameLeagueModal">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="{{asset('/img/project_logos/dgl_sq.png')}}" alt="">
+            </div>
+
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#CloudshapesModal">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="{{asset('/img/project_logos/cs_270.png')}}" alt="">
+            </div>
+            {{--            </div>--}}
+        </div>
+        <!-- /.row -->
+
+    </div>
+
 </section>
 
 <!-- About Section -->
-<section class="page-section bg-primary text-white mb-0" id="about">
+<section class="page-section bg-primary text-white mb-0" style="min-height: 95vh" id="about">
     <div class="container">
 
         <!-- About Section Heading -->
@@ -257,27 +255,52 @@
         <!-- About Section Content -->
         <div class="row">
             <div class="col-lg-4 ml-auto">
-                <p class="lead">I am a Full-stack web developer</p>
+                <p class="lead">I am a Senior Full-stack developer from Toronto, Ontario. I really enjoy
+                building to innovative web applications. I have worked on a few myself for both work and for personal projects.</p>
             </div>
             <div class="col-lg-4 mr-auto">
-                <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
+                <p class="lead">I also have a Bachelor's degree in Computer Science. I like to think I have a good understanding of
+                computer science fundamentals such as OOP, Data Structures and alogrithms, etc.</p>
             </div>
+        </div>
+
+        <h3 class="text-uppercase text-center mt-3">Technology stack I'm familar with.</h3>
+
+        <div class="row justify-content-center">
+            <img class="mx-2 my-3" src="/img/tech_logos/3.png" height="75" data-toggle="tooltip" title="Linux">
+            <img class="mx-2 my-3" src="/img/tech_logos/9.png" height="75" data-toggle="tooltip" title="Apache">
+            <img class="mx-2 my-3" src="/img/tech_logos/10.png" height="75" data-toggle="tooltip" title="PHP">
+            <img class="mx-2 my-3" src="/img/tech_logos/8.png" height="75" data-toggle="tooltip" title="HTML(5)">
+            <img class="mx-2 my-3" src="/img/tech_logos/7.png" height="75" data-toggle="tooltip" title="CSS(3)">
+            <img class="mx-2 my-3" src="/img/tech_logos/1.png" height="75" data-toggle="tooltip" title="Angular/AngularJS">
+            <img class="mx-2 my-3" src="/img/tech_logos/17.png" height="75" data-toggle="tooltip" title="ReactJS">
+            <img class="mx-2 my-3" src="/img/tech_logos/2.png" height="75" data-toggle="tooltip" title="VueJS">
+            <img class="mx-2 my-3" src="/img/tech_logos/13.png" height="75" data-toggle="tooltip" title="Laravel">
+            <img class="mx-2 my-3" src="/img/tech_logos/14.png" height="75" data-toggle="tooltip" title="Lumen">
+            <img class="mx-2 my-3" src="/img/tech_logos/18.png" height="75" data-toggle="tooltip" title="MySQL">
+            <img class="mx-2 my-3" src="/img/tech_logos/15.png" height="75" data-toggle="tooltip" title="MariaDB">
+            <img class="mx-2 my-3" src="/img/tech_logos/11.png" height="75" data-toggle="tooltip" title="WordPress">
+            <img class="mx-2 my-3" src="/img/tech_logos/5.png" height="75" data-toggle="tooltip" title="C">
+            <img class="mx-2 my-3" src="/img/tech_logos/4.png" height="75" data-toggle="tooltip" title="C++">
+            <img class="mx-2 my-3" src="/img/tech_logos/12.png" height="75" data-toggle="tooltip" title="Java">
+            <img class="mx-2 my-3" src="/img/tech_logos/6.png" height="75" data-toggle="tooltip" title="Objective C">
+            <img class="mx-2 my-3" src="/img/tech_logos/16.png" height="75" data-toggle="tooltip" title="Python">
         </div>
 
         <!-- About Section Button -->
         <div class="text-center mt-4">
-            <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
+            <button class="btn btn-xl btn-outline-light"  data-toggle="modal" data-target="#exampleModal">
                 <i class="fas fa-download mr-2"></i>
-                Free Download!
-            </a>
+                Download My Resume
+            </button>
         </div>
 
     </div>
 </section>
 
 <!-- Contact Section -->
-<section class="page-section" id="contact">
-    <div class="container">
+<section class="page-section" style="min-height: 95vh" id="contact">
+    <div class="container" >
 
         <!-- Contact Section Heading -->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
@@ -779,6 +802,226 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Portfolio Modal 6 -->
+<div class="portfolio-modal modal fade" id="DaGameLeagueModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <!-- Portfolio Modal - Title -->
+                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                        <!-- Icon Divider -->
+                        {{--                            <div class="divider-custom">--}}
+                        {{--                                <div class="divider-custom-line"></div>--}}
+                        {{--                                <div class="divider-custom-icon">--}}
+                        {{--                                    <i class="fas fa-star"></i>--}}
+                        {{--                                </div>--}}
+                        {{--                                <div class="divider-custom-line"></div>--}}
+                        {{--                            </div>--}}
+                        <!-- Portfolio Modal - Image -->
+                            <img class="img-fluid rounded my-3" src="img/project_logos/DGLcolorLogo.png" alt="">
+                            <!-- Portfolio Modal - Text -->
+                            <p>This is an organization that I co-founded in 2005. DaGameLeague (DGL) is the first online gaming community
+                            in Bangladesh. This is a non-profit organization that has existed in various forms since its inception. In
+                            its early days it was a forum to promote e-sports discussions and tournaments. In the following years we
+                            organized various e-sports LAN tournaments and sponsored e-sports teams for national and international
+                            tournaments. In 2018 we abandoned LAN tournaments in favor of online tournaments organized through
+                                our website DGLcore.com which I designed and built.</p>
+
+                            <div class="row mb-5">
+                                <div class="col">
+                                    <img src="https://img.icons8.com/android/18/000000/domain.png"/>
+                                    <a  href="https://dglcore.com">
+
+                                        https://dglcore.com.com</a>
+                                </div>
+                                <div class="col">
+                                    <i class="fab fa-github"></i>
+                                    <a  href="https://github.com/XEQTIONR/dgl-site">
+
+                                        https://github.com/XEQTIONR/dgl-site</a>
+                                </div>
+                            </div>
+
+
+
+
+                            <button class="btn btn-primary" href="#" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal 7 -->
+<div class="portfolio-modal modal fade" id="StripekartModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal7Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <!-- Portfolio Modal - Title -->
+                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                        <!-- Icon Divider -->
+                        {{--                            <div class="divider-custom">--}}
+                        {{--                                <div class="divider-custom-line"></div>--}}
+                        {{--                                <div class="divider-custom-icon">--}}
+                        {{--                                    <i class="fas fa-star"></i>--}}
+                        {{--                                </div>--}}
+                        {{--                                <div class="divider-custom-line"></div>--}}
+                        {{--                            </div>--}}
+                        <!-- Portfolio Modal - Image -->
+                            <img class="img-fluid rounded my-5" src="img/project_logos/logo1920.png" alt="">
+                            <!-- Portfolio Modal - Text -->
+
+
+
+                            <p>Stripekart was start-up idea that I was working on. The goal was to provide fulfillment
+                                services to remote areas where popular online marketplaces such as Amazon or Ebay do not
+                                deliver. I was in the process of developing prototypes for the iOS and Andriod apps
+                                using the NativeScript framework. The venture was eventually scrapped after the
+                                inability to find feasible solutions to problems such as being able to work with local
+                                payment providers, unavailability of the types of goods in demand, market saturation etc.
+                            </p>
+
+                            <div class="row mb-5">
+                                <div class="col">
+                                    <img src="https://img.icons8.com/android/18/000000/domain.png"/>
+                                    <a  href="https://stripekart.com">
+
+                                        https://stripekart.com</a>
+                                </div>
+                                <div class="col">
+                                    <i class="fab fa-github"></i>
+                                    <a  href="https://github.com/XEQTIONR/stripekart">
+
+                                        https://github.com/XEQTIONR/stripekart</a>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-primary" href="#" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal 8 -->
+<div class="portfolio-modal modal fade" id="CloudshapesModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <!-- Portfolio Modal - Title -->
+                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                        <!-- Icon Divider -->
+                        {{--                            <div class="divider-custom">--}}
+                        {{--                                <div class="divider-custom-line"></div>--}}
+                        {{--                                <div class="divider-custom-icon">--}}
+                        {{--                                    <i class="fas fa-star"></i>--}}
+                        {{--                                </div>--}}
+                        {{--                                <div class="divider-custom-line"></div>--}}
+                        {{--                            </div>--}}
+                        <!-- Portfolio Modal - Image -->
+                            <img class="img-fluid rounded" src="img/project_logos/cs_lg.png" alt="">
+                            <!-- Portfolio Modal - Text -->
+
+                            <p class="mt-4">
+                                A social networking platform for iOS that I was working on as a personal project while
+                                I was a university student. This served me as an introduction to mobile development and
+                                was helpful to me in exploring various APIs available to iOS developers. Codebase is
+                                available on my GitHub.
+                            </p>
+
+                            <div class="row mb-5">
+
+                                <div class="col">
+                                    <img src="https://img.icons8.com/android/18/000000/domain.png"/>
+                                    <a  href="http://www.thecloudshapes.com">
+
+                                        http://www.thecloudshapes.com</a>
+                                </div>
+
+                                <div class="col">
+                                    <i class="fab fa-github"></i>
+                                    <a  href="https://github.com/XEQTIONR/Cloudshapes-ios">
+
+                                        https://github.com/XEQTIONR/Cloudshapes-ios</a>
+                                </div>
+
+                            </div>
+
+
+
+                            <button class="btn btn-primary" href="#" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-primary">Pick a format</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body py-5 row justify-content-around">
+                <a href="/resume/IshteharHussain_resume.docx" download ><img src="https://img.icons8.com/dusk/64/000000/pdf-2.png"/></a>
+                <a href="/resume/IshteharHussain_resume.pdf" download ><img src="https://img.icons8.com/dusk/64/000000/word.png"/></a>
+                <a href="/resume/IshteharHussain_resume.txt" download ><img src="https://img.icons8.com/dusk/64/000000/txt.png"/></a>
+
+            </div>
+{{--            <div class="modal-footer">--}}
+{{--                <button type="button" class="btn btn-primary">Save changes</button>--}}
+{{--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+{{--            </div>--}}
         </div>
     </div>
 </div>
