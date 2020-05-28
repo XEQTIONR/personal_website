@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>{{config('app.name')}}</title>
 
     <!-- Custom fonts for this theme -->
     <link href="all.css" rel="stylesheet" type="text/css">
@@ -42,6 +42,15 @@
         .companies:hover{
             box-shadow: none;
             /*border: 2px solid #EEEE00;*/
+        }
+
+        .file-types{
+            border : 3px dashed white;
+
+        }
+
+        .file-types:hover{
+            border-color : #85cbf8;
         }
 
     </style>
@@ -100,7 +109,7 @@
         </div>
 
         <!-- Masthead Subheading -->
-        <p class="masthead-subheading font-weight-light mb-0">Full Stack Devloper - Software Developer - Backend Engineer</p>
+        <p class="masthead-subheading font-weight-light mb-0">Full Stack Developer - Backend Engineer - Software Developer </p>
 
     </div>
 </header>
@@ -275,9 +284,9 @@
             <img class="mx-2 my-3" src="/img/tech_logos/1.png" height="75" data-toggle="tooltip" title="Angular/AngularJS">
             <img class="mx-2 my-3" src="/img/tech_logos/17.png" height="75" data-toggle="tooltip" title="ReactJS">
             <img class="mx-2 my-3" src="/img/tech_logos/2.png" height="75" data-toggle="tooltip" title="VueJS">
-            <img class="mx-2 my-3" src="/img/tech_logos/13.png" height="75" data-toggle="tooltip" title="Laravel">
+            <img class="mx-0 my-3" src="/img/tech_logos/13.png" height="75" data-toggle="tooltip" title="Laravel">
             <img class="mx-2 my-3" src="/img/tech_logos/14.png" height="75" data-toggle="tooltip" title="Lumen">
-            <img class="mx-2 my-3" src="/img/tech_logos/18.png" height="75" data-toggle="tooltip" title="MySQL">
+            <img class="mx-1 my-3" src="/img/tech_logos/18.png" height="75" data-toggle="tooltip" title="MySQL">
             <img class="mx-2 my-3" src="/img/tech_logos/15.png" height="75" data-toggle="tooltip" title="MariaDB">
             <img class="mx-2 my-3" src="/img/tech_logos/11.png" height="75" data-toggle="tooltip" title="WordPress">
             <img class="mx-2 my-3" src="/img/tech_logos/5.png" height="75" data-toggle="tooltip" title="C">
@@ -285,6 +294,7 @@
             <img class="mx-2 my-3" src="/img/tech_logos/12.png" height="75" data-toggle="tooltip" title="Java">
             <img class="mx-2 my-3" src="/img/tech_logos/6.png" height="75" data-toggle="tooltip" title="Objective C">
             <img class="mx-2 my-3" src="/img/tech_logos/16.png" height="75" data-toggle="tooltip" title="Python">
+            <img class="mx-2 my-3" src="/img/tech_logos/19.png" height="75" data-toggle="tooltip" title="BASH">
         </div>
 
         <!-- About Section Button -->
@@ -1003,19 +1013,44 @@
 
 
 
-<div class="modal" tabindex="-1" role="dialog" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+<div class="modal " tabindex="-1" role="dialog" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title font-primary">Pick a format</h5>
+                <h5 class="modal-title text-secondary">Pick a format</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body py-5 row justify-content-around">
-                <a href="/resume/IshteharHussain_resume.docx" download ><img src="https://img.icons8.com/dusk/64/000000/pdf-2.png"/></a>
-                <a href="/resume/IshteharHussain_resume.pdf" download ><img src="https://img.icons8.com/dusk/64/000000/word.png"/></a>
-                <a href="/resume/IshteharHussain_resume.txt" download ><img src="https://img.icons8.com/dusk/64/000000/txt.png"/></a>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="/resume/IshteharHussain_resume.docx" download >
+                            <img class="d-block mx-auto file-types" src="https://img.icons8.com/dusk/64/000000/pdf-2.png"/></a>
+
+                    </div>
+                    <div class="col-4">
+
+                        <a  href="/resume/IshteharHussain_resume.pdf" download >
+                            <img class="d-block mx-auto file-types" src="https://img.icons8.com/dusk/64/000000/word.png"/></a>
+                    </div>
+                    <div class="col-4">
+
+                        <a  href="/resume/IshteharHussain_resume.txt" download >
+                            <img class="d-block mx-auto file-types" src="https://img.icons8.com/dusk/64/000000/txt.png"/></a>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-4">
+                        <span style="color: #ef85a2 !important;" class="d-block text-center text-dark">PDF</span>
+                    </div>
+                    <div class="col-4">
+                        <span style="color: #85cbf8 !important;" class="d-block text-center text-dark">DOCX</span>
+                    </div>
+                    <div class="col-4">
+                        <span style="color: #9172a3 !important;" class="d-block text-center text-dark">TXT</span>
+                    </div>
+                </div>
 
             </div>
 {{--            <div class="modal-footer">--}}
