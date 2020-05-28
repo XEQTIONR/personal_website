@@ -13,7 +13,15 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Ishtehar Hussain'),
+
+    'linkedin' => env('LINKED_IN', '/in/ishteharhussain'),
+
+    'github' => env('GITHUB', '/xeqtionr'),
+
+    'email_address' => env('EMAIL_ADDRESS', 'ishteharhussain@gmail.com'),
+
+    'skype' => env('SKYPE', 'ovi_hussain'),
 
     /*
     |--------------------------------------------------------------------------
