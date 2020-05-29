@@ -6,14 +6,14 @@ EXPERIENCE
 
 Languages
 
-Proficient in 
-● Php (Laravel, Wordpress) ● Sql (MySQL, MariaDB) ● JavaScript (Jquery, Vue, Angular, React) ● Objective C ● Bash ● HTML ● CSS 
+Proficient in
+● Php (Laravel, Wordpress) ● Sql (MySQL, MariaDB) ● JavaScript (Jquery, Vue, Angular, React) ● Objective C ● Bash ● HTML ● CSS
 
-Familiar with 
-● C/C++ ● Java ● Python
+Familiar with
+● C/C++ ● Java ● Python (Django)
 
 
-Contract - Full Stack Developer 
+Contract - Full Stack Developer
 July 2019 – Jan 2020
 
 Revival Point LLC, New York NY
@@ -30,7 +30,7 @@ Leverage IT, Toronto ON
 ● Leveraged AWS Cloud computing resources (EC2, S3, Lambda, CloudFront) to develop custom solutions.
 ● Pushed the team to adopt Gitflow which reduced merged conflicts by 50% and sped up release cycles.
 
-Full Stack Developer 
+Full Stack Developer
 Aug 2017 – April 2018
 
 Ariad Communications, Toronto ON
