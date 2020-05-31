@@ -19,5 +19,11 @@
             </div>
         </div>
     </div>
+
+    <div id="example" class="row justify-content-center">
+
+    </div>
+
+{{--    <script src="/js/app.js"></script>--}}
 </div>
 @endsection
