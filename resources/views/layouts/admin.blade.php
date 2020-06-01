@@ -203,10 +203,13 @@
 <script src="/sb/jquery.min.js"></script>
 <script src="/sb/bootstrap.bundle.min.js"></script>
 
+
 <!-- Core plugin JavaScript-->
 <script src="/sb/jquery.easing.min.js"></script>
 <!-- Custom scripts for all pages-->
 <script src="/sb/sb-admin-2.min.js"></script>
+<script src="/js/app.js"></script>
+
 
 </body>
 
