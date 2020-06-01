@@ -199,6 +199,12 @@
     </div>
 </div>
 
+<script>
+
+    const username = '{{Auth::user()->name}}';
+</script>
+
+
 <!-- Bootstrap core JavaScript-->
 <script src="/jquery.min.js"></script>
 <script src="/bootstrap.bundle.min.js"></script>
