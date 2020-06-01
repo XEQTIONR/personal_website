@@ -145,7 +145,8 @@
         <div id="content">
 
             <!-- Topbar -->
-                @yield('navbar', View::make('major_components.navbar'))
+                <nav id="navbar" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                </nav>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
