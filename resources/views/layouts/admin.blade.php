@@ -114,6 +114,10 @@
 <script src="/jquery.easing.min.js"></script>
 <!-- Custom scripts for all pages-->
 <script src="/sb/sb-admin-2.min.js"></script>
+
+
+<script src="/ace-editor-src/ace.js"></script>
+
 <script src="/js/app.js"></script>
 
 

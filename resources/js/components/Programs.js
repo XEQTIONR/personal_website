@@ -5,6 +5,8 @@ import NewProgram from "./NewProgram";
 function Programs(props){
 
     const [showModal, setShowModal] = useState(false)
+    const [text, setText] = useState("INITIAL")
+
 
     return (
 
@@ -20,11 +22,10 @@ function Programs(props){
 
         <div className="row">
             <div className="col-12">
-                Programs Component
             </div>
         </div>
 
-        { showModal ? <NewProgram hideCallback={() =>{setShowModal(false)}}/> : ''}
+        { showModal ? <NewProgram hideCallback={() =>{setShowModal(false)}} text={text} setText={setText}/> : ''}
 
         </Fragment>
     )
