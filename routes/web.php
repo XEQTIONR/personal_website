@@ -18,3 +18,7 @@ Route::get('/','MainController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/programs', 'ProgramController');
+
+Route::resource('/collections', 'CollectionController');
