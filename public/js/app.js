@@ -29012,7 +29012,7 @@ function NewProgram(props) {
 
       if (props.text == null) _editor.setValue("HELLO WORLD");else _editor.setValue(props.text);
       setEditor(_editor);
-    }
+    } else editor.focus();
   });
 
   var hideCallback = function hideCallback(e) {

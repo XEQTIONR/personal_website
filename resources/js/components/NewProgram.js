@@ -21,6 +21,8 @@ function NewProgram(props){
 
             setEditor(editor)
         }
+        else
+            editor.focus()
 
     })
 
