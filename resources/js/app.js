@@ -14,3 +14,4 @@
 
 require('./components/Example');
 require('./components/Navbar');
+require('./components/Programs');
