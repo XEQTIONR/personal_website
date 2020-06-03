@@ -1,5 +1,5 @@
 import React, {Fragment, useState, useEffect} from 'react'
-import ReactDOM from 'react-dom'
+import SelectField from "./atomic/SelectField";
 
 function NewProgram(props){
 
@@ -20,9 +20,12 @@ function NewProgram(props){
 
 
             setEditor(editor)
+
         }
-        else
+        else{
+            editor.resize()
             editor.focus()
+        }
 
     })
 
@@ -38,19 +41,32 @@ function NewProgram(props){
             props.hideCallback()
     }
 
+    let content = <React.Fragment>
+        <div className="row mb-2">
+            <div className="col-md-3">
+                <SelectField values={["A","B","C"]} />
+            </div>
+        </div>
+    </React.Fragment>
+
     return (
         <div className="modal-background d-flex justify-content-center align-items-center"
              onClick={hideCallback}>
 
 
-            <form className="card bg-gray-100 m-4 w-100 h-50" onClick={(e)=>{ e.stopPropagation(); console.log("FORM CLICKED")}}
-                  style={{ overflowY : "show", maxHeight: "90%"}}
+            <div className="card bg-gray-100 m-4 w-100" onClick={(e)=>{ e.preventDefault(); e.stopPropagation(); console.log("FORM CLICKED")}}
+                  // style={{ overflowY : "show", maxHeight: "90%"}}
             >
-                <span id="editor" className="card-body" onChange={(e) => {console.log('change')}}>
+                <div className="card-body">
+                    {content}
+                </div>
+                <div className="card-footer">
+                <div id="editor">
 
-                </span>
+                </div>
+                </div>
 
-            </form>
+            </div>
 
         </div>
 

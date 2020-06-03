@@ -28979,8 +28979,7 @@ if (document.getElementById('navbar')) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./atomic/SelectField */ "./resources/js/components/atomic/SelectField.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29012,7 +29011,10 @@ function NewProgram(props) {
 
       if (props.text == null) _editor.setValue("HELLO WORLD");else _editor.setValue(props.text);
       setEditor(_editor);
-    } else editor.focus();
+    } else {
+      editor.resize();
+      editor.focus();
+    }
   });
 
   var hideCallback = function hideCallback(e) {
@@ -29021,26 +29023,31 @@ function NewProgram(props) {
     if (props.hideCallback != undefined) props.hideCallback();
   };
 
+  var content = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mb-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    values: ["A", "B", "C"]
+  }))));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal-background d-flex justify-content-center align-items-center",
     onClick: hideCallback
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    className: "card bg-gray-100 m-4 w-100 h-50",
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card bg-gray-100 m-4 w-100",
     onClick: function onClick(e) {
+      e.preventDefault();
       e.stopPropagation();
       console.log("FORM CLICKED");
-    },
-    style: {
-      overflowY: "show",
-      maxHeight: "90%"
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    id: "editor",
-    className: "card-body",
-    onChange: function onChange(e) {
-      console.log('change');
-    }
-  })));
+    } // style={{ overflowY : "show", maxHeight: "90%"}}
+
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, content), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-footer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "editor"
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (NewProgram);
@@ -29118,6 +29125,261 @@ function Programs(props) {
 if (document.getElementById('Programs')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Programs, null), document.getElementById('Programs'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/atomic/SelectField.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/atomic/SelectField.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var SelectField = /*#__PURE__*/function (_React$Component) {
+  _inherits(SelectField, _React$Component);
+
+  var _super = _createSuper(SelectField);
+
+  function SelectField(props) {
+    var _this;
+
+    _classCallCheck(this, SelectField);
+
+    _this = _super.call(this, props);
+    var real_val;
+    var label; //
+
+    if (props.values.length) {
+      real_val = typeof props.values[0] === "string" ? props.values[0] : props.values[0].value;
+      label = props.values[0].label !== undefined ? props.values[0].label : props.values[0];
+    } else {
+      real_val = null;
+      label = null;
+    }
+
+    _this.state = {
+      val: real_val,
+      label: label,
+      options: props.values,
+      hover_index: null,
+      open: false
+    };
+    _this.oKU = _this.oKU.bind(_assertThisInitialized(_this));
+    _this.toggle_select_button = _this.toggle_select_button.bind(_assertThisInitialized(_this));
+    _this.select_option = _this.select_option.bind(_assertThisInitialized(_this));
+    _this.oB = _this.oB.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(SelectField, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.select_option(0);
+    }
+  }, {
+    key: "toggle_select_button",
+    value: function toggle_select_button() {
+      var open = this.state.open;
+      this.setState({
+        open: !open
+      });
+    }
+  }, {
+    key: "select_option",
+    value: function select_option(index) {
+      var real_val = typeof this.props.values[index] === "string" ? this.props.values[index] : this.props.values[index].value;
+      var label = typeof this.props.values[index] === "string" ? this.props.values[index] : typeof this.props.values[index].label != "undefined" ? this.props.values[index].label : this.props.values[index].value;
+      this.setState({
+        val: real_val,
+        label: label,
+        open: false,
+        hover_index: index
+      });
+      if (this.props.selectedCb !== undefined) this.props.selectedCb(real_val);
+    }
+  }, {
+    key: "oB",
+    value: function oB() {
+      this.setState({
+        open: false
+      });
+    }
+  }, {
+    key: "oKU",
+    value: function oKU(event) {
+      // console.log(event.key)
+      switch (event.key) {
+        case "ArrowDown":
+          var idx = this.state.hover_index === null ? 0 : (this.state.hover_index + 1) % this.state.options.length;
+          this.setState({
+            open: true,
+            hover_index: idx
+          });
+          break;
+
+        case "ArrowUp":
+          if (this.state.open) {
+            var _idx = this.state.hover_index === 0 ? this.state.options.length - 1 : Math.abs(this.state.hover_index - 1) % this.state.options.length;
+
+            this.setState({
+              hover_index: _idx
+            });
+          }
+
+          break;
+
+        case "Enter":
+          if (this.state.open && this.state.hover_index != null) this.select_option(this.state.hover_index);else if (!this.state.open) this.setState({
+            open: true
+          });
+          break;
+
+        case "Escape":
+          console.log("Escape");
+          if (this.state.open) this.setState({
+            open: false
+          });
+          break;
+
+        case "Tab":
+          if (!this.state.open) this.setState({
+            open: true
+          });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var list_items_render = [];
+      var overflow_y = this.props.maxHeight == undefined ? "default" : "scroll";
+      var max_height = this.props.maxHeight == undefined ? "default" : this.props.maxHeight;
+      var me = this;
+      this.state.options.forEach(function (element, index) {
+        var render = typeof element === 'string' ? element :
+        /*#__PURE__*/
+        // <React.Fragment>
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "w-100 h-100 d-flex align-items-center"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "d-flex justify-content-center align-items-center",
+          style: {
+            width: "1em",
+            height: "1em"
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: " m-auto " + element.icon + (element.color !== undefined ? ' text-' + element.color : '')
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "ml-2"
+        }, typeof element.label !== "undefined" ? element.label : element.value)); // </React.Fragment>
+
+        list_items_render.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: index,
+          className: me.state.hover_index == index ? "bg-primary list-group-item" : "list-group-item",
+          style: {
+            cursor: "pointer"
+          },
+          onMouseOver: function onMouseOver() {
+            return me.setState({
+              hover_index: index
+            });
+          },
+          onClick: function onClick(e) {
+            e.stopPropagation();
+            me.select_option(index);
+          }
+        }, render));
+      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "w-100",
+        style: {
+          maxHeight: "2rem"
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input-group select-field",
+        onClick: function onClick(e) {
+          e.stopPropagation();
+
+          _this2.toggle_select_button();
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control",
+        type: "text",
+        style: {
+          cursor: "pointer"
+        },
+        value: this.state.label !== undefined ? this.state.label : this.state.val,
+        onKeyUp: function onKeyUp(e) {
+          e.preventDefault();
+          me.oKU(e);
+        },
+        onBlur: function onBlur(e) {
+          console.log("BLUR");
+          setTimeout(function () {
+            me.setState({
+              open: false
+            });
+          }, 100);
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input-group-append",
+        style: {
+          cursor: "pointer"
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input-group-text"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-angle-down"
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.state.open ? "list-group select-field-list" : "d-none select-field-list",
+        style: {
+          overflowY: overflow_y,
+          maxHeight: max_height
+        }
+      }, list_items_render), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.state.open ? "select-field-background" : "d-none",
+        onClick: function onClick(e) {
+          _this2.setState({
+            open: false
+          });
+        }
+      }));
+    }
+  }]);
+
+  return SelectField;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SelectField);
 
 /***/ }),
 

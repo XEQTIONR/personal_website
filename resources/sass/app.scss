@@ -19,3 +19,28 @@
     background-color: rgba(0,0,0,.85);
 
 }
+
+.select-field-background{
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    top: 0;
+    left: 0;
+    z-index : 1052;
+    background-color :  rgba(0,0,0,0.1);
+}
+
+.select-field-list{
+    position: relative;
+    z-index: 1054 !important;
+    //max-height: 4rem;
+    //overflow-y:  default;
+}
+
+#editor{
+    //position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 33vh;
+}
+
