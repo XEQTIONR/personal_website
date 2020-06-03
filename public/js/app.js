@@ -29001,6 +29001,11 @@ function NewProgram(props) {
       editor = _useState2[0],
       setEditor = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.text),
+      _useState4 = _slicedToArray(_useState3, 2),
+      text = _useState4[0],
+      setText = _useState4[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
       var _editor = ace.edit("editor");
@@ -29008,6 +29013,10 @@ function NewProgram(props) {
       _editor.setTheme("ace/theme/dracula");
 
       _editor.session.setMode("ace/mode/javascript");
+
+      _editor.session.on('change', function () {
+        setText(_editor.getValue());
+      });
 
       if (props.text == null) _editor.setValue("HELLO WORLD");else _editor.setValue(props.text);
       setEditor(_editor);
@@ -29023,13 +29032,16 @@ function NewProgram(props) {
     if (props.hideCallback != undefined) props.hideCallback();
   };
 
-  var content = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row mb-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    values: ["A", "B", "C"]
-  }))));
+  var render = text.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn btn-primary btn-icon-split"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text"
+  }, "Add a program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon text-white-50"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-arrow-right"
+  }))) : "";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal-background d-flex justify-content-center align-items-center",
     onClick: hideCallback
@@ -29039,12 +29051,23 @@ function NewProgram(props) {
       e.preventDefault();
       e.stopPropagation();
       console.log("FORM CLICKED");
-    } // style={{ overflowY : "show", maxHeight: "90%"}}
-
+    },
+    style: {
+      overflowY: "show",
+      height: "90vh"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, content), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-footer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    values: ["A", "B", "C"]
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-3 offset-md-6 d-flex justify-content-end"
+  }, render))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-footer h-100"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "editor"
   }))));
@@ -29090,7 +29113,7 @@ function Programs(props) {
       showModal = _useState2[0],
       setShowModal = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("INITIAL"),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
       _useState4 = _slicedToArray(_useState3, 2),
       text = _useState4[0],
       setText = _useState4[1];

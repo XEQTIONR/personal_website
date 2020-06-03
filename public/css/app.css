@@ -25,7 +25,6 @@
 
 #editor {
   width: 100%;
-  height: auto;
-  min-height: 33vh;
+  height: 100%;
 }
 

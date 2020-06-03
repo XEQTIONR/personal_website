@@ -4,6 +4,8 @@ import SelectField from "./atomic/SelectField";
 function NewProgram(props){
 
     const [editor, setEditor] = useState(null);
+    const [text, setText] = useState(props.text);
+
 
     useEffect(() => {
 
@@ -12,6 +14,7 @@ function NewProgram(props){
             let editor = ace.edit("editor")
             editor.setTheme("ace/theme/dracula")
            editor.session.setMode("ace/mode/javascript")
+           editor.session.on('change', () =>  { setText(editor.getValue())})
 
             if(props.text == null)
                 editor.setValue("HELLO WORLD")
@@ -41,13 +44,13 @@ function NewProgram(props){
             props.hideCallback()
     }
 
-    let content = <React.Fragment>
-        <div className="row mb-2">
-            <div className="col-md-3">
-                <SelectField values={["A","B","C"]} />
-            </div>
-        </div>
-    </React.Fragment>
+    let render = text.length ?
+        <button type="button" className="btn btn-primary btn-icon-split">
+            <span className="text">Add a program</span>
+            <span className="icon text-white-50">
+                <i className="fas fa-arrow-right"></i>
+            </span>
+        </button> : ""
 
     return (
         <div className="modal-background d-flex justify-content-center align-items-center"
@@ -55,15 +58,25 @@ function NewProgram(props){
 
 
             <div className="card bg-gray-100 m-4 w-100" onClick={(e)=>{ e.preventDefault(); e.stopPropagation(); console.log("FORM CLICKED")}}
-                  // style={{ overflowY : "show", maxHeight: "90%"}}
+                   style={{ overflowY : "show", height: "90vh"}}
             >
                 <div className="card-body">
-                    {content}
-                </div>
-                <div className="card-footer">
-                <div id="editor">
+                    <div className="row">
+                        <div className="col-md-3">
+                            <SelectField values={["A","B","C"]} />
+                        </div>
+                        <div className="col-md-3 offset-md-6 d-flex justify-content-end">
+
+                            {render}
+                        </div>
+                    </div>
+
 
                 </div>
+                <div className="card-footer h-100">
+                    <div id="editor">
+
+                    </div>
                 </div>
 
             </div>

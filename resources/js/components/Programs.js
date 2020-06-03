@@ -5,7 +5,7 @@ import NewProgram from "./NewProgram";
 function Programs(props){
 
     const [showModal, setShowModal] = useState(false)
-    const [text, setText] = useState("INITIAL")
+    const [text, setText] = useState("")
 
 
     return (
