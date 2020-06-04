@@ -104,6 +104,8 @@
     const username = '{{Auth::user()->name}}';
 </script>
 
+@yield('scripts')
+
 
 <!-- Bootstrap core JavaScript-->
 <script src="/jquery.min.js"></script>

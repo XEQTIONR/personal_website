@@ -16,3 +16,9 @@
     </div>
     <!-- /.container-fluid -->
 @endsection
+
+@section('scripts')
+    <script>
+        const editor_themes = JSON.parse('{!! json_encode($themes) !!}');
+    </script>
+@endsection
