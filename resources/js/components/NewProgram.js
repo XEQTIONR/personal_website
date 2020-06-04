@@ -39,6 +39,11 @@ function NewProgram(props){
             editor.setTheme(theme)
     }
 
+    const changeLanguage = (lang) => {
+        if(editor != null)
+            editor.session.setMode(lang)
+    }
+
 
     const hideCallback = (e) =>{
 
@@ -83,9 +88,9 @@ function NewProgram(props){
                             <SelectField values={
                                 syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }})
                             }
-                                         // selectedCb={(val) => {
-                                         //     changeTheme(val)
-                                         // }}
+                                         selectedCb={(val) => {
+                                             changeLanguage(val)
+                                         }}
                             maxHeight="50vh"/>
                         </div>
                         <div className="col-md-3 offset-md-3 d-flex justify-content-end">

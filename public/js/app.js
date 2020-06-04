@@ -29036,6 +29036,10 @@ function NewProgram(props) {
     if (editor != null) editor.setTheme(theme);
   };
 
+  var changeLanguage = function changeLanguage(lang) {
+    if (editor != null) editor.session.setMode(lang);
+  };
+
   var hideCallback = function hideCallback(e) {
     e.stopPropagation();
     if (props.setText != undefined && editor != null) props.setText(editor.getValue());
@@ -29091,10 +29095,10 @@ function NewProgram(props) {
         value: language.syntax_id,
         label: language.name
       };
-    }) // selectedCb={(val) => {
-    //     changeTheme(val)
-    // }}
-    ,
+    }),
+    selectedCb: function selectedCb(val) {
+      changeLanguage(val);
+    },
     maxHeight: "50vh"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3 offset-md-3 d-flex justify-content-end"
