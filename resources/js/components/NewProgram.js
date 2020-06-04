@@ -5,7 +5,8 @@ function NewProgram(props){
 
     const [editor, setEditor] = useState(null);
     const [text, setText] = useState(props.text);
-
+    const [themes, setThemes] = useState(editor_themes)
+    //const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
 
     useEffect(() => {
 
@@ -17,7 +18,7 @@ function NewProgram(props){
            editor.session.on('change', () =>  { setText(editor.getValue())})
 
             if(props.text == null)
-                editor.setValue("HELLO WORLD")
+                editor.setValue("")
             else
                 editor.setValue(props.text)
 
@@ -63,7 +64,9 @@ function NewProgram(props){
                 <div className="card-body">
                     <div className="row">
                         <div className="col-md-3">
-                            <SelectField values={["A","B","C"]} />
+                            <SelectField values={
+                                themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }})
+                            } />
                         </div>
                         <div className="col-md-3 offset-md-6 d-flex justify-content-end">
 

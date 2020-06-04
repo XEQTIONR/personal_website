@@ -29006,6 +29006,12 @@ function NewProgram(props) {
       text = _useState4[0],
       setText = _useState4[1];
 
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes),
+      _useState6 = _slicedToArray(_useState5, 2),
+      themes = _useState6[0],
+      setThemes = _useState6[1]; //const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
+
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
       var _editor = ace.edit("editor");
@@ -29018,7 +29024,7 @@ function NewProgram(props) {
         setText(_editor.getValue());
       });
 
-      if (props.text == null) _editor.setValue("HELLO WORLD");else _editor.setValue(props.text);
+      if (props.text == null) _editor.setValue("");else _editor.setValue(props.text);
       setEditor(_editor);
     } else {
       editor.resize();
@@ -29063,7 +29069,12 @@ function NewProgram(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    values: ["A", "B", "C"]
+    values: themes.map(function (atheme) {
+      return {
+        value: atheme.theme_id,
+        label: atheme.name
+      };
+    })
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3 offset-md-6 d-flex justify-content-end"
   }, render))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
