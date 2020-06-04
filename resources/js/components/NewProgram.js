@@ -3,10 +3,10 @@ import SelectField from "./atomic/SelectField";
 
 function NewProgram(props){
 
-    const [editor, setEditor] = useState(null);
-    const [text, setText] = useState(props.text);
+    const [editor, setEditor] = useState(null)
+    const [text, setText] = useState(props.text)
     const [themes, setThemes] = useState(editor_themes)
-    //const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
+    const [syntaxes, setSyntaxes] = useState(editor_syntaxes)
 
     useEffect(() => {
 
@@ -76,9 +76,19 @@ function NewProgram(props){
                             selectedCb={(val) => {
                                 changeTheme(val)
                             }}
-                            />
+                            maxHeight="50vh"/>
                         </div>
-                        <div className="col-md-3 offset-md-6 d-flex justify-content-end">
+
+                        <div className="col-md-3">
+                            <SelectField values={
+                                syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }})
+                            }
+                                         // selectedCb={(val) => {
+                                         //     changeTheme(val)
+                                         // }}
+                            maxHeight="50vh"/>
+                        </div>
+                        <div className="col-md-3 offset-md-3 d-flex justify-content-end">
 
                             {render}
                         </div>

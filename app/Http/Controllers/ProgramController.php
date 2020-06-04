@@ -17,15 +17,22 @@ class ProgramController extends Controller
 
         $files = Storage::disk('ace')->files();
 
+        $themes = [];
+        $syntaxes = [];
 
-        $filtered = array_filter($files, function($val){
+        $theme_files = array_filter($files, function($val){
 
             return preg_match( "/theme-.+.js/", $val);
         });
 
-        $themes = [];
+        $syntax_files = array_filter($files, function($val){
+            return preg_match( "/mode-.+.js/", $val);
+        });
 
-        foreach($filtered as $val)
+
+
+
+        foreach($theme_files as $val)
         {
             //remove teminating ".js"
             $name = substr($val, 0, strlen($val) -3);
@@ -46,9 +53,36 @@ class ProgramController extends Controller
             array_push($themes, compact('name', 'url', 'theme_id'));
         }
 
+        foreach($syntax_files as $val)
+        {
+            //remove teminating ".js"
+            $name = substr($val, 0, strlen($val) -3);
+
+            //remove starting "theme-"
+            $name = substr($name, 5, strlen($name));
+
+            //replace underscores with spaces
+            $name = str_replace('_', ' ', $name);
+
+            // Capitalize words
+            $name = ucwords($name);
+
+            $url = Storage::disk('ace')->url($val);
+
+            $syntax_id = substr(str_replace('-', '/', $url), 1 ,strlen($url) -4);
+
+
+            array_push($syntaxes, compact('name', 'url', 'syntax_id'));
+        }
+
+       // $syntaxes = collect($syntaxes)->sortBy('name')->toArray();
+
+        //dd($syntaxes);
+
+
         //return $themes;
         //dd($themes);
-        return view('programs', compact('themes'));
+        return view('programs', compact('themes', 'syntaxes'));
     }
 
     /**

@@ -29009,8 +29009,12 @@ function NewProgram(props) {
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes),
       _useState6 = _slicedToArray(_useState5, 2),
       themes = _useState6[0],
-      setThemes = _useState6[1]; //const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
+      setThemes = _useState6[1];
 
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_syntaxes),
+      _useState8 = _slicedToArray(_useState7, 2),
+      syntaxes = _useState8[0],
+      setSyntaxes = _useState8[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
@@ -29077,9 +29081,23 @@ function NewProgram(props) {
     }),
     selectedCb: function selectedCb(val) {
       changeTheme(val);
-    }
+    },
+    maxHeight: "50vh"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-3 offset-md-6 d-flex justify-content-end"
+    className: "col-md-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    values: syntaxes.map(function (language) {
+      return {
+        value: language.syntax_id,
+        label: language.name
+      };
+    }) // selectedCb={(val) => {
+    //     changeTheme(val)
+    // }}
+    ,
+    maxHeight: "50vh"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-3 offset-md-3 d-flex justify-content-end"
   }, render))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-footer h-100"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
