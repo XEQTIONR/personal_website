@@ -70,6 +70,13 @@ return [
             'root' => public_path('/img/avatars'),
             'url' => '/img/avatars',
             'visibility' => 'public'
+        ],
+
+        'ace' => [
+            'driver' => 'local',
+            'root' => public_path('/ace-editor-src'),
+            'url' => '/ace',
+            'visibility' => 'public'
         ]
 
     ],
