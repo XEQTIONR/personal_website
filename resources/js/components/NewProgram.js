@@ -12,18 +12,18 @@ function NewProgram(props){
 
         if(editor == null)
         {
-            let editor = ace.edit("editor")
-            editor.setTheme("ace/theme/dracula")
-           editor.session.setMode("ace/mode/javascript")
-           editor.session.on('change', () =>  { setText(editor.getValue())})
+            let local_editor = ace.edit("editor")
+            local_editor.setTheme("ace/theme/dracula")
+           local_editor.session.setMode("ace/mode/javascript")
+           local_editor.session.on('change', () =>  { setText(local_editor.getValue())})
 
             if(props.text == null)
-                editor.setValue("")
+                local_editor.setValue("")
             else
-                editor.setValue(props.text)
+                local_editor.setValue(props.text)
 
 
-            setEditor(editor)
+            setEditor(local_editor)
 
         }
         else{
@@ -32,6 +32,12 @@ function NewProgram(props){
         }
 
     })
+
+    const changeTheme = (theme) =>{
+
+        if(editor != null)
+            editor.setTheme(theme)
+    }
 
 
     const hideCallback = (e) =>{
@@ -66,7 +72,11 @@ function NewProgram(props){
                         <div className="col-md-3">
                             <SelectField values={
                                 themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }})
-                            } />
+                            }
+                            selectedCb={(val) => {
+                                changeTheme(val)
+                            }}
+                            />
                         </div>
                         <div className="col-md-3 offset-md-6 d-flex justify-content-end">
 

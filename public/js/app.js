@@ -29014,23 +29014,23 @@ function NewProgram(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
-      var _editor = ace.edit("editor");
-
-      _editor.setTheme("ace/theme/dracula");
-
-      _editor.session.setMode("ace/mode/javascript");
-
-      _editor.session.on('change', function () {
-        setText(_editor.getValue());
+      var local_editor = ace.edit("editor");
+      local_editor.setTheme("ace/theme/dracula");
+      local_editor.session.setMode("ace/mode/javascript");
+      local_editor.session.on('change', function () {
+        setText(local_editor.getValue());
       });
-
-      if (props.text == null) _editor.setValue("");else _editor.setValue(props.text);
-      setEditor(_editor);
+      if (props.text == null) local_editor.setValue("");else local_editor.setValue(props.text);
+      setEditor(local_editor);
     } else {
       editor.resize();
       editor.focus();
     }
   });
+
+  var changeTheme = function changeTheme(theme) {
+    if (editor != null) editor.setTheme(theme);
+  };
 
   var hideCallback = function hideCallback(e) {
     e.stopPropagation();
@@ -29074,7 +29074,10 @@ function NewProgram(props) {
         value: atheme.theme_id,
         label: atheme.name
       };
-    })
+    }),
+    selectedCb: function selectedCb(val) {
+      changeTheme(val);
+    }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3 offset-md-6 d-flex justify-content-end"
   }, render))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
