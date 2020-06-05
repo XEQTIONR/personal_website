@@ -117,13 +117,6 @@ function NewProgram(props){
             props.hideCallback()
     }
 
-    let render = text.length ?
-        <button type="button" className="btn btn-primary btn-icon-split">
-            <span className="text">Add a program</span>
-            <span className="icon text-white-50">
-                <i className="fas fa-arrow-right"></i>
-            </span>
-        </button> : ""
 
     return (
         <div className="modal-background d-flex justify-content-center align-items-center"
@@ -135,24 +128,45 @@ function NewProgram(props){
             >
                 <div className="card-body">
                     <div className="row">
-                        <div className="col-md-3">
-                            <SelectField values={themes}
-                            selectedCb={(val) => {
-                                changeTheme(val)
-                            }}
-                            maxHeight="50vh" initIndex={initTheme}/>
-                        </div>
 
-                        <div className="col-md-3">
+                        <div className="col-md-2">
+                            Language
                             <SelectField values={syntaxes}
                                          selectedCb={(val) => {
                                              changeLanguage(val)
                                          }}
                             maxHeight="50vh"  initIndex={initLang}  />
                         </div>
-                        <div className="col-md-3 offset-md-3 d-flex justify-content-end">
 
-                            {render}
+                        <div className="col-md-2">
+                            Theme
+                            <SelectField values={themes}
+                                         selectedCb={(val) => {
+                                             changeTheme(val)
+                                         }}
+                                         maxHeight="50vh" initIndex={initTheme}/>
+                        </div>
+
+                        <div className="col-md-4 offset-md-4">
+
+
+
+                            <button type="button" className={`btn btn-primary btn-icon-split mb-0 mt-3 float-right ${text.length ? "" : "disabled"} `}>
+                                <span className="text">Add a program</span>
+                                <span className="icon text-white-50">
+                                    <i className="fas fa-arrow-right"></i>
+                                 </span>
+                            </button>
+
+                            <button type="button" className="btn btn-secondary btn-icon-split mb-0 mt-3 mr-2 float-right">
+                                <span className="text">Edit Description</span>
+                                <span className="icon text-white-50">
+                                <i className="fas fa-notes-medical"></i>
+                            </span>
+                            </button>
+
+
+
                         </div>
                     </div>
 
