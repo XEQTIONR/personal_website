@@ -8,14 +8,30 @@ function NewProgram(props){
     const [themes, setThemes] = useState(editor_themes)
     const [syntaxes, setSyntaxes] = useState(editor_syntaxes)
     const [initLang, setInitLang] = useState(1)
+
     useEffect(() => {
 
         if(editor == null)
         {
             let local_editor = ace.edit("editor")
-            local_editor.setTheme("ace/theme/dracula")
-           local_editor.session.setMode("ace/mode/javascript")
-           local_editor.session.on('change', () =>  { setText(local_editor.getValue())})
+
+            // local_editor.setTheme("ace/theme/dracula")
+
+            local_editor.setTheme( (props.theme && props.theme !=null)
+                ? (props.theme)
+                : "ace/theme/dracula")
+
+
+            // local_editor.session.setMode( (props.theme && props.theme !=null)
+            //                                 ? (props.theme)
+            //                                 : "ace/mode/javascript")
+
+
+            local_editor.session.setMode("ace/mode/javascript")
+
+
+
+            local_editor.session.on('change', () =>  { setText(local_editor.getValue())})
 
             if(props.text == null)
                 local_editor.setValue("")
@@ -30,16 +46,18 @@ function NewProgram(props){
             editor.resize()
             editor.focus()
 
-            let javascript = syntaxes.find((lang, index) => {
+                let default_lang_name =  'Javascript'
 
-                if(lang.name == 'Javascript'){
-                        setInitLang(index)
-                        return true
-                }
+                let default_lang = syntaxes.find((lang, index) => {
 
-                return false
+                    if(lang.name ==   default_lang_name){
+                            setInitLang(index)
+                            return true
+                    }
 
-            })
+                    return false
+
+                })
 
 
         }
@@ -49,7 +67,13 @@ function NewProgram(props){
     const changeTheme = (theme) =>{
 
         if(editor != null)
+        {
             editor.setTheme(theme)
+
+            if(props.themeCallback != undefined)
+                props.themeCallback(theme)
+        }
+
     }
 
     const changeLanguage = (lang) => {

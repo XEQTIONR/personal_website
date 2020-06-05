@@ -6,7 +6,8 @@ function Programs(props){
 
     const [showModal, setShowModal] = useState(false)
     const [text, setText] = useState("")
-
+    const [lang, setLang] = useState(null)
+    const [theme, setTheme] = useState(null)
 
     return (
 
@@ -25,8 +26,23 @@ function Programs(props){
             </div>
         </div>
 
-        { showModal ? <NewProgram hideCallback={() =>{setShowModal(false)}} text={text} setText={setText}/> : ''}
 
+            {showModal ?
+                <NewProgram hideCallback={() => {
+                    setShowModal(false)
+                }}
+                            themeCallback={(new_theme) => {
+                                setTheme(new_theme)
+                            }}
+
+                            langCallback={(new_lang) => {
+                                setLang(new_lang)
+                            }}
+
+                            text={text} setText={setText} lang={lang} theme={theme}
+                /> :
+                ''
+            }
         </Fragment>
     )
 

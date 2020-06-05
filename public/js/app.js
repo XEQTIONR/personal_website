@@ -29023,8 +29023,12 @@ function NewProgram(props) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
-      var local_editor = ace.edit("editor");
-      local_editor.setTheme("ace/theme/dracula");
+      var local_editor = ace.edit("editor"); // local_editor.setTheme("ace/theme/dracula")
+
+      local_editor.setTheme(props.theme && props.theme != null ? props.theme : "ace/theme/dracula"); // local_editor.session.setMode( (props.theme && props.theme !=null)
+      //                                 ? (props.theme)
+      //                                 : "ace/mode/javascript")
+
       local_editor.session.setMode("ace/mode/javascript");
       local_editor.session.on('change', function () {
         setText(local_editor.getValue());
@@ -29034,8 +29038,9 @@ function NewProgram(props) {
     } else {
       editor.resize();
       editor.focus();
-      var javascript = syntaxes.find(function (lang, index) {
-        if (lang.name == 'Javascript') {
+      var default_lang_name = 'Javascript';
+      var default_lang = syntaxes.find(function (lang, index) {
+        if (lang.name == default_lang_name) {
           setInitLang(index);
           return true;
         }
@@ -29046,7 +29051,10 @@ function NewProgram(props) {
   });
 
   var changeTheme = function changeTheme(theme) {
-    if (editor != null) editor.setTheme(theme);
+    if (editor != null) {
+      editor.setTheme(theme);
+      if (props.themeCallback != undefined) props.themeCallback(theme);
+    }
   };
 
   var changeLanguage = function changeLanguage(lang) {
@@ -29168,6 +29176,16 @@ function Programs(props) {
       text = _useState4[0],
       setText = _useState4[1];
 
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      lang = _useState6[0],
+      setLang = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      theme = _useState8[0],
+      setTheme = _useState8[1];
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
     className: "btn btn-primary btn-icon-split btn-sm",
@@ -29188,8 +29206,16 @@ function Programs(props) {
     hideCallback: function hideCallback() {
       setShowModal(false);
     },
+    themeCallback: function themeCallback(new_theme) {
+      setTheme(new_theme);
+    },
+    langCallback: function langCallback(new_lang) {
+      setLang(new_lang);
+    },
     text: text,
-    setText: setText
+    setText: setText,
+    lang: lang,
+    theme: theme
   }) : '');
 }
 
