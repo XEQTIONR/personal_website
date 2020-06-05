@@ -15,11 +15,14 @@ function NewProgram(props){
         {
             let local_editor = ace.edit("editor")
 
-            // local_editor.setTheme("ace/theme/dracula")
 
-            local_editor.setTheme( (props.theme && props.theme !=null)
-                ? (props.theme)
-                : "ace/theme/dracula")
+
+            if(props.theme && props.theme != null)
+            {
+                local_editor.setTheme(props.theme)
+            }
+            else
+                local_editor.setTheme("ace/theme/dracula")
 
 
             // local_editor.session.setMode( (props.theme && props.theme !=null)
