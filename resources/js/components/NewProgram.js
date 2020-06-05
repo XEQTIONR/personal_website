@@ -34,14 +34,21 @@ function NewProgram(props){
                 return false
             })
 
+            let local_syntax = (props.lang && props.lang !=null)
+                ? (props.lang)
+                : "ace/mode/javascript"
 
+            local_editor.session.setMode(local_syntax)
 
-            // local_editor.session.setMode( (props.theme && props.theme !=null)
-            //                                 ? (props.theme)
-            //                                 : "ace/mode/javascript")
+            syntaxes.find((alang, index) =>{
 
-
-            local_editor.session.setMode("ace/mode/javascript")
+                if(alang.value == props.lang)
+                {
+                    setInitLang(index)
+                    return true
+                }
+                return false
+            })
 
 
 
@@ -93,6 +100,9 @@ function NewProgram(props){
     const changeLanguage = (lang) => {
         if(editor != null)
             editor.session.setMode(lang)
+
+        if(props.langCallback != undefined)
+            props.langCallback(lang)
     }
 
 

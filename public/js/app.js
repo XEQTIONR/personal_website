@@ -29049,11 +29049,17 @@ function NewProgram(props) {
         }
 
         return false;
-      }); // local_editor.session.setMode( (props.theme && props.theme !=null)
-      //                                 ? (props.theme)
-      //                                 : "ace/mode/javascript")
+      });
+      var local_syntax = props.lang && props.lang != null ? props.lang : "ace/mode/javascript";
+      local_editor.session.setMode(local_syntax);
+      syntaxes.find(function (alang, index) {
+        if (alang.value == props.lang) {
+          setInitLang(index);
+          return true;
+        }
 
-      local_editor.session.setMode("ace/mode/javascript");
+        return false;
+      });
       local_editor.session.on('change', function () {
         setText(local_editor.getValue());
       });
@@ -29083,6 +29089,7 @@ function NewProgram(props) {
 
   var changeLanguage = function changeLanguage(lang) {
     if (editor != null) editor.session.setMode(lang);
+    if (props.langCallback != undefined) props.langCallback(lang);
   };
 
   var hideCallback = function hideCallback(e) {
