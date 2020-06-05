@@ -1,20 +1,27 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import SelectField from "./atomic/SelectField";
 import TextField from "./atomic/TextField"
+
+import MarkdownIt from "markdown-it"
+
 function NewProgram(props){
 
     const [editor, setEditor] = useState(null)
+    const [descriptionEditor, setDescriptionEditior] = useState(null)
     const [title, setTitle] = useState('Untitled')
     const [ref, setRef] = useState(React.createRef);
     const [isTooltip, setIsTooltip] = useState(false);
     const [editingTitle, setEditingTitle] = useState(false);
     const [text, setText] = useState(props.text)
+    const [descriptionText, setDescriptionText] = useState(null)
     const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
     const [syntaxes, setSyntaxes] = useState(editor_syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }}))
     const [initLang, setInitLang] = useState(1)
     const [initTheme, setInitTheme] = useState(1)
 
     const [showEditor, setShowEditor] = useState(true)
+
+    const mdParser  =  new MarkdownIt()
 
 
     let tempTitle = false
@@ -71,6 +78,34 @@ function NewProgram(props){
 
             setEditor(local_editor)
 
+
+
+
+
+            let local_description_editor = ace.edit("descriptionEditor")
+
+            let local_description_theme =  "ace/theme/cobalt"
+
+            local_description_editor.setTheme(local_description_theme)
+
+            local_description_editor.session.setMode("ace/mode/markdown")
+
+            if(descriptionText == null)
+                local_description_editor.setValue("")
+            else
+                local_description_editor.setValue(props.text)
+
+
+            local_description_editor.session.on('change', () =>  {
+                setDescriptionText(local_description_editor.getValue())
+
+                console.log(mdParser.render(local_description_editor.getValue()))
+            })
+
+            setDescriptionEditior(local_description_editor)
+
+
+
         }
         else{
             editor.resize()
@@ -87,11 +122,13 @@ function NewProgram(props){
 
                     return false
 
+
                 })
+
+            descriptionEditor.resize()
 
 
         }
-
     })
 
     const changeTheme = (theme) =>{
@@ -202,7 +239,12 @@ function NewProgram(props){
                                  </span>
                             </button>
 
-                            <button type="button" className="btn btn-secondary btn-icon-split mb-0 mt-3 mr-2 float-right"  onClick={() => {setShowEditor(!showEditor)}}>
+                            <button type="button" className="btn btn-secondary btn-icon-split mb-0 mt-3 mr-2 float-right"  onClick={() =>
+                            {
+                                setShowEditor(!showEditor)
+                                descriptionEditor.resize()
+
+                            }}>
                                 <span className="text">Edit Description</span>
                                 <span className="icon text-white-50">
                                 <i className="fas fa-notes-medical"></i>
@@ -218,6 +260,14 @@ function NewProgram(props){
                 </div>
                 <div className={`card-footer h-100 ${!showEditor ? "d-none" : ""}`}>
                     <div id="editor">
+
+                    </div>
+                </div>
+                <div className={`card-footer h-100 ${!showEditor ? "d-flex" : "d-none"}`}>
+                    <div id="descriptionEditor" className="col h-100 m-0">
+
+                    </div>
+                    <div id="descriptionOutput" className="col h-100 m-0" dangerouslySetInnerHTML={{__html: mdParser.render(descriptionText ==  null ? '' : ('' + descriptionText))}}>
 
                     </div>
                 </div>
