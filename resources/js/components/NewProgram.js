@@ -8,6 +8,7 @@ function NewProgram(props){
     const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
     const [syntaxes, setSyntaxes] = useState(editor_syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }}))
     const [initLang, setInitLang] = useState(1)
+    const [initTheme, setInitTheme] = useState(1)
 
     useEffect(() => {
 
@@ -15,14 +16,24 @@ function NewProgram(props){
         {
             let local_editor = ace.edit("editor")
 
+            // local_editor.setTheme("ace/theme/dracula")
 
+            let local_theme = (props.theme && props.theme !=null)
+                ? (props.theme)
+                : "ace/theme/dracula"
 
-            if(props.theme && props.theme != null)
-            {
-                local_editor.setTheme(props.theme)
-            }
-            else
-                local_editor.setTheme("ace/theme/dracula")
+            local_editor.setTheme(local_theme)
+
+            themes.find((atheme, index) =>{
+
+                if(atheme.value == local_theme)
+                {
+                    setInitTheme(index)
+                    return true
+                }
+                return false
+            })
+
 
 
             // local_editor.session.setMode( (props.theme && props.theme !=null)
@@ -119,7 +130,7 @@ function NewProgram(props){
                             selectedCb={(val) => {
                                 changeTheme(val)
                             }}
-                            maxHeight="50vh"/>
+                            maxHeight="50vh" initIndex={initTheme}/>
                         </div>
 
                         <div className="col-md-3">

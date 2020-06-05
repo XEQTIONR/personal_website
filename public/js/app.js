@@ -29031,11 +29031,25 @@ function NewProgram(props) {
       initLang = _useState10[0],
       setInitLang = _useState10[1];
 
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState12 = _slicedToArray(_useState11, 2),
+      initTheme = _useState12[0],
+      setInitTheme = _useState12[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
       var local_editor = ace.edit("editor"); // local_editor.setTheme("ace/theme/dracula")
 
-      local_editor.setTheme(props.theme && props.theme != null ? props.theme : "ace/theme/dracula"); // local_editor.session.setMode( (props.theme && props.theme !=null)
+      var local_theme = props.theme && props.theme != null ? props.theme : "ace/theme/dracula";
+      local_editor.setTheme(local_theme);
+      themes.find(function (atheme, index) {
+        if (atheme.value == local_theme) {
+          setInitTheme(index);
+          return true;
+        }
+
+        return false;
+      }); // local_editor.session.setMode( (props.theme && props.theme !=null)
       //                                 ? (props.theme)
       //                                 : "ace/mode/javascript")
 
@@ -29112,7 +29126,8 @@ function NewProgram(props) {
     selectedCb: function selectedCb(val) {
       changeTheme(val);
     },
-    maxHeight: "50vh"
+    maxHeight: "50vh",
+    initIndex: initTheme
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
