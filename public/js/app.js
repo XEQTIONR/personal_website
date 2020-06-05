@@ -28980,6 +28980,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./atomic/SelectField */ "./resources/js/components/atomic/SelectField.js");
+/* harmony import */ var _atomic_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./atomic/TextField */ "./resources/js/components/atomic/TextField.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28995,47 +28996,69 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function NewProgram(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
       editor = _useState2[0],
       setEditor = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.text),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('Untitled'),
       _useState4 = _slicedToArray(_useState3, 2),
-      text = _useState4[0],
-      setText = _useState4[1];
+      title = _useState4[0],
+      setTitle = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes.map(function (atheme) {
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef),
+      _useState6 = _slicedToArray(_useState5, 2),
+      ref = _useState6[0],
+      setRef = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      isTooltip = _useState8[0],
+      setIsTooltip = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      editingTitle = _useState10[0],
+      setEditingTitle = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.text),
+      _useState12 = _slicedToArray(_useState11, 2),
+      text = _useState12[0],
+      setText = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes.map(function (atheme) {
     return {
       value: atheme.theme_id,
       label: atheme.name
     };
   })),
-      _useState6 = _slicedToArray(_useState5, 2),
-      themes = _useState6[0],
-      setThemes = _useState6[1];
+      _useState14 = _slicedToArray(_useState13, 2),
+      themes = _useState14[0],
+      setThemes = _useState14[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_syntaxes.map(function (language) {
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_syntaxes.map(function (language) {
     return {
       value: language.syntax_id,
       label: language.name
     };
   })),
-      _useState8 = _slicedToArray(_useState7, 2),
-      syntaxes = _useState8[0],
-      setSyntaxes = _useState8[1];
+      _useState16 = _slicedToArray(_useState15, 2),
+      syntaxes = _useState16[0],
+      setSyntaxes = _useState16[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
-      _useState10 = _slicedToArray(_useState9, 2),
-      initLang = _useState10[0],
-      setInitLang = _useState10[1];
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState18 = _slicedToArray(_useState17, 2),
+      initLang = _useState18[0],
+      setInitLang = _useState18[1];
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
-      _useState12 = _slicedToArray(_useState11, 2),
-      initTheme = _useState12[0],
-      setInitTheme = _useState12[1];
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState20 = _slicedToArray(_useState19, 2),
+      initTheme = _useState20[0],
+      setInitTheme = _useState20[1];
 
+  var tempTitle = false;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
       var local_editor = ace.edit("editor"); // local_editor.setTheme("ace/theme/dracula")
@@ -29098,6 +29121,39 @@ function NewProgram(props) {
     if (props.hideCallback != undefined) props.hideCallback();
   };
 
+  var title_render = editingTitle ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "d-flex col-md-6 justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group input-group-sm"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    val: title,
+    className: "form-control rounded-0 transparent-input",
+    change: function change(v) {
+      tempTitle = v;
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "input-group-append"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn btn-info btn-sm",
+    onClick: function onClick() {
+      if (tempTitle.length) setTitle(tempTitle);
+      setEditingTitle(false);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-check"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn btn-danger btn-sm",
+    onClick: function onClick() {
+      tempTitle = "";
+      setEditingTitle(false);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-times"
+  })))))) : '';
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modal-background d-flex justify-content-center align-items-center",
     onClick: hideCallback
@@ -29113,6 +29169,21 @@ function NewProgram(props) {
       height: "90vh"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: (editingTitle ? "d-none" : "d-flex") + " col-12 justify-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    ref: ref,
+    title: "Edit title",
+    className: "editable-text"
+  }, title, "  ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    onClick: function onClick() {
+      setEditingTitle(true);
+    },
+    className: "editable-text-icon fa fa-edit ml-1"
+  }))), title_render)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
@@ -29514,6 +29585,95 @@ var SelectField = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SelectField);
+
+/***/ }),
+
+/***/ "./resources/js/components/atomic/TextField.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/atomic/TextField.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var TextField = /*#__PURE__*/function (_Component) {
+  _inherits(TextField, _Component);
+
+  var _super = _createSuper(TextField);
+
+  function TextField(props) {
+    var _this;
+
+    _classCallCheck(this, TextField);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      val: props.val
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(TextField, [{
+    key: "handleChange",
+    value: function handleChange(e) {
+      e.preventDefault(); //set internal state
+
+      this.setState({
+        val: e.target.value
+      }); //call to change callback
+
+      this.props.change(e.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var classes = this.props.className != undefined ? this.props.className : '';
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "form-control " + classes,
+        type: this.props.type !== undefined ? this.props.type : 'text',
+        value: this.state.val,
+        onChange: function onChange(event) {
+          return _this2.handleChange(event);
+        },
+        placeholder: this.props.placeholder
+      });
+    }
+  }]);
+
+  return TextField;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (TextField);
 
 /***/ }),
 

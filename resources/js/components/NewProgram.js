@@ -1,14 +1,20 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import SelectField from "./atomic/SelectField";
-
+import TextField from "./atomic/TextField"
 function NewProgram(props){
 
     const [editor, setEditor] = useState(null)
+    const [title, setTitle] = useState('Untitled')
+    const [ref, setRef] = useState(React.createRef);
+    const [isTooltip, setIsTooltip] = useState(false);
+    const [editingTitle, setEditingTitle] = useState(false);
     const [text, setText] = useState(props.text)
     const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
     const [syntaxes, setSyntaxes] = useState(editor_syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }}))
     const [initLang, setInitLang] = useState(1)
     const [initTheme, setInitTheme] = useState(1)
+
+    let tempTitle = false
 
     useEffect(() => {
 
@@ -117,6 +123,27 @@ function NewProgram(props){
             props.hideCallback()
     }
 
+    let title_render = editingTitle ?
+        <div className="d-flex col-md-6 justify-content-center">
+            <div className="row justify-content-center">
+                <div className="input-group input-group-sm">
+                    <TextField val={title} className="form-control rounded-0 transparent-input"
+                               change={(v) => { tempTitle = v }}
+                    />
+                    <span className="input-group-append">
+                        <button type="button" className="btn btn-info btn-sm" onClick={() =>{if(tempTitle.length)setTitle(tempTitle); setEditingTitle(false)}}>
+                            <i className="fas fa-check"></i>
+                        </button>
+                        <button type="button" className="btn btn-danger btn-sm" onClick={() =>{tempTitle = ""; setEditingTitle(false)}}>
+                            <i className="fas fa-times"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        :
+        ''
+
 
     return (
         <div className="modal-background d-flex justify-content-center align-items-center"
@@ -126,6 +153,20 @@ function NewProgram(props){
             <div className="card bg-gray-100 m-4 w-100" onClick={(e)=>{ e.preventDefault(); e.stopPropagation(); console.log("FORM CLICKED")}}
                    style={{ overflowY : "show", height: "90vh"}}
             >
+
+                <div className="card-header">
+                    <div className="row justify-content-center">
+                        <div className={(editingTitle ? "d-none" : "d-flex") +  " col-12 justify-content-center"}>
+                            <span ref={ref} title="Edit title" className="editable-text">
+                                {title}  <i onClick={() => {setEditingTitle(true)}} className="editable-text-icon fa fa-edit ml-1"></i>
+                            </span>
+                        </div>
+
+                        {title_render}
+
+                    </div>
+                </div>
+
                 <div className="card-body">
                     <div className="row">
 
