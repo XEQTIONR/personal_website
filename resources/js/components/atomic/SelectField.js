@@ -36,9 +36,18 @@ class SelectField extends React.Component{
     }
 
     componentDidMount(){
-        this.select_option(0)
+
+        if(this.props.initIndex !=undefined)
+            this.select_option(this.props.initIndex)
+        else
+            this.select_option(0)
     }
 
+    componentDidUpdate(prevProps) {
+
+        if(this.props.initIndex != prevProps.initIndex)
+            this.select_option(this.props.initIndex)
+    }
 
 
     toggle_select_button(){
