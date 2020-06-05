@@ -141,6 +141,9 @@ function NewProgram(props){
                 props.themeCallback(theme)
         }
 
+        if(descriptionEditor != null)
+            descriptionEditor.setTheme(theme)
+
     }
 
     const changeLanguage = (lang) => {
@@ -210,13 +213,25 @@ function NewProgram(props){
                 <div className="card-body">
                     <div className="row">
 
-                        <div className="col-md-2">
+                        <div className={`col-md-2 ${showEditor ? "" : "d-none"}`}>
                             Language
                             <SelectField values={syntaxes}
                                          selectedCb={(val) => {
                                              changeLanguage(val)
                                          }}
                             maxHeight="50vh"  initIndex={initLang}  />
+                        </div>
+                        <div className={`col-md-2 ${showEditor ? "d-none" : ""}`}>
+                            <div className="row">
+                                <div className="col-12">
+                                    Language
+                                </div>
+                                <div className="col-12 mt-2">
+                                    <strong className="">Markdown</strong>
+                                </div>
+                            </div>
+
+
                         </div>
 
                         <div className="col-md-2">
@@ -245,9 +260,9 @@ function NewProgram(props){
                                 descriptionEditor.resize()
 
                             }}>
-                                <span className="text">Edit Description</span>
+                                <span className="text">{`Edit ${showEditor ? "Description" : "Code"}`}</span>
                                 <span className="icon text-white-50">
-                                <i className="fas fa-notes-medical"></i>
+                                <i className={showEditor ? "fas fa-edit" : "fas fa-code"}></i>
                             </span>
                             </button>
 

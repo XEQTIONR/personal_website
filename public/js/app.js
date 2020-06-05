@@ -38008,6 +38008,8 @@ function NewProgram(props) {
       editor.setTheme(theme);
       if (props.themeCallback != undefined) props.themeCallback(theme);
     }
+
+    if (descriptionEditor != null) descriptionEditor.setTheme(theme);
   };
 
   var changeLanguage = function changeLanguage(lang) {
@@ -38088,7 +38090,7 @@ function NewProgram(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-2"
+    className: "col-md-2 ".concat(showEditor ? "" : "d-none")
   }, "Language", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
     values: syntaxes,
     selectedCb: function selectedCb(val) {
@@ -38097,6 +38099,16 @@ function NewProgram(props) {
     maxHeight: "50vh",
     initIndex: initLang
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-2 ".concat(showEditor ? "d-none" : "")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12"
+  }, "Language"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
+    className: ""
+  }, "Markdown")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-2"
   }, "Theme", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
     values: themes,
@@ -38125,10 +38137,10 @@ function NewProgram(props) {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text"
-  }, "Edit Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, "Edit ".concat(showEditor ? "Description" : "Code")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon text-white-50"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-notes-medical"
+    className: showEditor ? "fas fa-edit" : "fas fa-code"
   })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-footer h-100 ".concat(!showEditor ? "d-none" : "")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
