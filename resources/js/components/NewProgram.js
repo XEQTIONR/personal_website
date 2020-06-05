@@ -14,6 +14,9 @@ function NewProgram(props){
     const [initLang, setInitLang] = useState(1)
     const [initTheme, setInitTheme] = useState(1)
 
+    const [showEditor, setShowEditor] = useState(true)
+
+
     let tempTitle = false
 
     useEffect(() => {
@@ -199,7 +202,7 @@ function NewProgram(props){
                                  </span>
                             </button>
 
-                            <button type="button" className="btn btn-secondary btn-icon-split mb-0 mt-3 mr-2 float-right">
+                            <button type="button" className="btn btn-secondary btn-icon-split mb-0 mt-3 mr-2 float-right"  onClick={() => {setShowEditor(!showEditor)}}>
                                 <span className="text">Edit Description</span>
                                 <span className="icon text-white-50">
                                 <i className="fas fa-notes-medical"></i>
@@ -213,7 +216,7 @@ function NewProgram(props){
 
 
                 </div>
-                <div className="card-footer h-100">
+                <div className={`card-footer h-100 ${!showEditor ? "d-none" : ""}`}>
                     <div id="editor">
 
                     </div>

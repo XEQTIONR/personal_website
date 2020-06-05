@@ -29058,6 +29058,11 @@ function NewProgram(props) {
       initTheme = _useState20[0],
       setInitTheme = _useState20[1];
 
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState22 = _slicedToArray(_useState21, 2),
+      showEditor = _useState22[0],
+      setShowEditor = _useState22[1];
+
   var tempTitle = false;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
@@ -29218,7 +29223,10 @@ function NewProgram(props) {
     className: "fas fa-arrow-right"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
-    className: "btn btn-secondary btn-icon-split mb-0 mt-3 mr-2 float-right"
+    className: "btn btn-secondary btn-icon-split mb-0 mt-3 mr-2 float-right",
+    onClick: function onClick() {
+      setShowEditor(!showEditor);
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text"
   }, "Edit Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -29226,7 +29234,7 @@ function NewProgram(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-notes-medical"
   })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-footer h-100"
+    className: "card-footer h-100 ".concat(!showEditor ? "d-none" : "")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "editor"
   }))));
