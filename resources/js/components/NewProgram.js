@@ -5,8 +5,8 @@ function NewProgram(props){
 
     const [editor, setEditor] = useState(null)
     const [text, setText] = useState(props.text)
-    const [themes, setThemes] = useState(editor_themes)
-    const [syntaxes, setSyntaxes] = useState(editor_syntaxes)
+    const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
+    const [syntaxes, setSyntaxes] = useState(editor_syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }}))
     const [initLang, setInitLang] = useState(1)
 
     useEffect(() => {
@@ -112,9 +112,7 @@ function NewProgram(props){
                 <div className="card-body">
                     <div className="row">
                         <div className="col-md-3">
-                            <SelectField values={
-                                themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }})
-                            }
+                            <SelectField values={themes}
                             selectedCb={(val) => {
                                 changeTheme(val)
                             }}
@@ -122,9 +120,7 @@ function NewProgram(props){
                         </div>
 
                         <div className="col-md-3">
-                            <SelectField values={
-                                syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }})
-                            }
+                            <SelectField values={syntaxes}
                                          selectedCb={(val) => {
                                              changeLanguage(val)
                                          }}

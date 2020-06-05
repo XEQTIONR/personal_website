@@ -29006,12 +29006,22 @@ function NewProgram(props) {
       text = _useState4[0],
       setText = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes.map(function (atheme) {
+    return {
+      value: atheme.theme_id,
+      label: atheme.name
+    };
+  })),
       _useState6 = _slicedToArray(_useState5, 2),
       themes = _useState6[0],
       setThemes = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_syntaxes),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_syntaxes.map(function (language) {
+    return {
+      value: language.syntax_id,
+      label: language.name
+    };
+  })),
       _useState8 = _slicedToArray(_useState7, 2),
       syntaxes = _useState8[0],
       setSyntaxes = _useState8[1];
@@ -29098,12 +29108,7 @@ function NewProgram(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    values: themes.map(function (atheme) {
-      return {
-        value: atheme.theme_id,
-        label: atheme.name
-      };
-    }),
+    values: themes,
     selectedCb: function selectedCb(val) {
       changeTheme(val);
     },
@@ -29111,12 +29116,7 @@ function NewProgram(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    values: syntaxes.map(function (language) {
-      return {
-        value: language.syntax_id,
-        label: language.name
-      };
-    }),
+    values: syntaxes,
     selectedCb: function selectedCb(val) {
       changeLanguage(val);
     },
