@@ -29016,6 +29016,11 @@ function NewProgram(props) {
       syntaxes = _useState8[0],
       setSyntaxes = _useState8[1];
 
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState10 = _slicedToArray(_useState9, 2),
+      initLang = _useState10[0],
+      setInitLang = _useState10[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
       var local_editor = ace.edit("editor");
@@ -29029,6 +29034,14 @@ function NewProgram(props) {
     } else {
       editor.resize();
       editor.focus();
+      var javascript = syntaxes.find(function (lang, index) {
+        if (lang.name == 'Javascript') {
+          setInitLang(index);
+          return true;
+        }
+
+        return false;
+      });
     }
   });
 
@@ -29099,7 +29112,8 @@ function NewProgram(props) {
     selectedCb: function selectedCb(val) {
       changeLanguage(val);
     },
-    maxHeight: "50vh"
+    maxHeight: "50vh",
+    initIndex: initLang
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-3 offset-md-3 d-flex justify-content-end"
   }, render))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -29261,7 +29275,12 @@ var SelectField = /*#__PURE__*/function (_React$Component) {
   _createClass(SelectField, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.select_option(0);
+      if (this.props.initIndex != undefined) this.select_option(this.props.initIndex);else this.select_option(0);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.initIndex != prevProps.initIndex) this.select_option(this.props.initIndex);
     }
   }, {
     key: "toggle_select_button",

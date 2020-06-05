@@ -7,7 +7,7 @@ function NewProgram(props){
     const [text, setText] = useState(props.text)
     const [themes, setThemes] = useState(editor_themes)
     const [syntaxes, setSyntaxes] = useState(editor_syntaxes)
-
+    const [initLang, setInitLang] = useState(1)
     useEffect(() => {
 
         if(editor == null)
@@ -29,6 +29,19 @@ function NewProgram(props){
         else{
             editor.resize()
             editor.focus()
+
+            let javascript = syntaxes.find((lang, index) => {
+
+                if(lang.name == 'Javascript'){
+                        setInitLang(index)
+                        return true
+                }
+
+                return false
+
+            })
+
+
         }
 
     })
@@ -91,7 +104,7 @@ function NewProgram(props){
                                          selectedCb={(val) => {
                                              changeLanguage(val)
                                          }}
-                            maxHeight="50vh"/>
+                            maxHeight="50vh"  initIndex={initLang}  />
                         </div>
                         <div className="col-md-3 offset-md-3 d-flex justify-content-end">
 
