@@ -24,5 +24,8 @@
         const editor_themes = JSON.parse('{!! json_encode($themes) !!}');
         const editor_syntaxes = JSON.parse('{!! json_encode($syntaxes) !!}');
 
+
+        const programs = JSON.parse('{!! json_encode($programs) !!}')
+
     </script>
 @endsection
