@@ -40027,7 +40027,6 @@ function NewProgram(props) {
       code: text,
       lang: currentLang ? currentLang.split('/').reverse()[0] : syntaxes[initLang].value.split('/').reverse()[0]
     };
-    console.log(program_info);
     axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(store_API, program_info).then(function (res) {
       console.log("RES :" + JSON.stringify(res));
     })["catch"](function (err) {
@@ -40211,58 +40210,62 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Programs(props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      showModal = _useState2[0],
-      setShowModal = _useState2[1];
+function Programs() {
+  var MainComponent = function MainComponent() {
+    var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+        _useState2 = _slicedToArray(_useState, 2),
+        showModal = _useState2[0],
+        setShowModal = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      _useState4 = _slicedToArray(_useState3, 2),
-      text = _useState4[0],
-      setText = _useState4[1];
+    var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+        _useState4 = _slicedToArray(_useState3, 2),
+        text = _useState4[0],
+        setText = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState6 = _slicedToArray(_useState5, 2),
-      lang = _useState6[0],
-      setLang = _useState6[1];
+    var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+        _useState6 = _slicedToArray(_useState5, 2),
+        lang = _useState6[0],
+        setLang = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState8 = _slicedToArray(_useState7, 2),
-      theme = _useState8[0],
-      setTheme = _useState8[1];
+    var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+        _useState8 = _slicedToArray(_useState7, 2),
+        theme = _useState8[0],
+        setTheme = _useState8[1];
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "btn btn-primary btn-icon-split btn-sm",
-    onClick: function onClick() {
-      setShowModal(true);
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "icon text-white-50"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-plus"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "text"
-  }, "Add a program")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-12"
-  })), showModal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewProgram__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    hideCallback: function hideCallback() {
-      setShowModal(false);
-    },
-    themeCallback: function themeCallback(new_theme) {
-      setTheme(new_theme);
-    },
-    langCallback: function langCallback(new_lang) {
-      setLang(new_lang);
-    },
-    text: text,
-    setText: setText,
-    lang: lang,
-    theme: theme
-  }) : '');
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "btn btn-primary btn-icon-split btn-sm",
+      onClick: function onClick() {
+        setShowModal(true);
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "icon text-white-50"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "fas fa-plus"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "text"
+    }, "Add a program")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "row"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "col-12"
+    })), showModal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewProgram__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      hideCallback: function hideCallback() {
+        setShowModal(false);
+      },
+      themeCallback: function themeCallback(new_theme) {
+        setTheme(new_theme);
+      },
+      langCallback: function langCallback(new_lang) {
+        setLang(new_lang);
+      },
+      text: text,
+      setText: setText,
+      lang: lang,
+      theme: theme
+    }) : '');
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainComponent, null);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Programs);
