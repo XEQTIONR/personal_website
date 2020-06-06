@@ -2,6 +2,8 @@ import React, {Fragment, useState, useEffect} from 'react'
 import SelectField from "./atomic/SelectField";
 import TextField from "./atomic/TextField"
 
+import axios from "axios"
+
 import MarkdownIt from "markdown-it"
 
 function NewProgram(props){
@@ -61,6 +63,7 @@ function NewProgram(props){
                 if(alang.value == props.lang)
                 {
                     setInitLang(index)
+                    setCurrentLang(alang.value)
                     return true
                 }
                 return false
@@ -144,6 +147,25 @@ function NewProgram(props){
 
         if(props.langCallback != undefined)
             props.langCallback(lang)
+    }
+
+
+    const store = () => {
+
+
+
+        let program_info =
+        {title, descriptionText, code : text,
+            lang : currentLang
+                ? currentLang.split('/').reverse()[0]
+                : syntaxes[initLang].value.split('/').reverse()[0]
+        }
+
+        console.log(program_info)
+
+        axios.post(store_API, program_info)
+            .then(res => { console.log("RES :" + JSON.stringify(res))})
+            .catch(err => {console.log("ERR : " +err)})
     }
 
 
@@ -240,13 +262,7 @@ function NewProgram(props){
 
 
                             <button type="button" className={`btn btn-primary btn-icon-split mb-0 mt-3 float-right ${text.length ? "" : "disabled"} `}
-                                onClick={() => {
-                                    console.log("TITLE :" + title)
-                                    console.log("DESCRIPTION :" + descriptionText)
-                                    console.log("CODE :" + text)
-                                    if(currentLang)
-                                    console.log("LANGUAGE :" + currentLang.split('/').reverse()[0])
-                                }}
+                                onClick={store}
                             >
                                 <span className="text">Add a program</span>
                                 <span className="icon text-white-50">

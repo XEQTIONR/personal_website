@@ -19,7 +19,10 @@
 
 @section('scripts')
     <script>
+        const store_API  = "{{ route('programs.store') }}"
+
         const editor_themes = JSON.parse('{!! json_encode($themes) !!}');
         const editor_syntaxes = JSON.parse('{!! json_encode($syntaxes) !!}');
+
     </script>
 @endsection
