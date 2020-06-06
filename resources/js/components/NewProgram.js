@@ -9,15 +9,15 @@ function NewProgram(props){
     const [editor, setEditor] = useState(null)
     const [descriptionEditor, setDescriptionEditior] = useState(null)
     const [title, setTitle] = useState('Untitled')
-    const [ref, setRef] = useState(React.createRef);
-    const [isTooltip, setIsTooltip] = useState(false);
     const [editingTitle, setEditingTitle] = useState(false);
     const [text, setText] = useState(props.text)
     const [descriptionText, setDescriptionText] = useState(null)
     const [themes, setThemes] = useState(editor_themes.map( (atheme) =>{ return  {value: atheme.theme_id, label: atheme.name }}))
     const [syntaxes, setSyntaxes] = useState(editor_syntaxes.map( (language) =>{ return  {value: language.syntax_id, label: language.name }}))
-    const [initLang, setInitLang] = useState(1)
-    const [initTheme, setInitTheme] = useState(1)
+    const [initLang, setInitLang] = useState(0)
+    const [initTheme, setInitTheme] = useState(0)
+
+    const [currentLang, setCurrentLang] = useState(null)
 
     const [showEditor, setShowEditor] = useState(true)
 
@@ -52,7 +52,7 @@ function NewProgram(props){
 
             let local_syntax = (props.lang && props.lang !=null)
                 ? (props.lang)
-                : "ace/mode/javascript"
+                : syntaxes[0].value
 
             local_editor.session.setMode(local_syntax)
 
@@ -111,19 +111,8 @@ function NewProgram(props){
             editor.resize()
             editor.focus()
 
-                let default_lang_name =  'Javascript'
-
-                let default_lang = syntaxes.find((lang, index) => {
-
-                    if(lang.name ==   default_lang_name){
-                            setInitLang(index)
-                            return true
-                    }
-
-                    return false
-
-
-                })
+            if(props.lang)
+                editor.session.setMode(props.lang);
 
             descriptionEditor.resize()
 
@@ -148,7 +137,10 @@ function NewProgram(props){
 
     const changeLanguage = (lang) => {
         if(editor != null)
+        {
             editor.session.setMode(lang)
+            setCurrentLang(lang)
+        }
 
         if(props.langCallback != undefined)
             props.langCallback(lang)
@@ -200,7 +192,7 @@ function NewProgram(props){
                 <div className="card-header">
                     <div className="row justify-content-center">
                         <div className={(editingTitle ? "d-none" : "d-flex") +  " col-12 justify-content-center"}>
-                            <span ref={ref} title="Edit title" className="editable-text">
+                            <span title="Edit title" className="editable-text">
                                 {title}  <i onClick={() => {setEditingTitle(true)}} className="editable-text-icon fa fa-edit ml-1"></i>
                             </span>
                         </div>
@@ -247,7 +239,15 @@ function NewProgram(props){
 
 
 
-                            <button type="button" className={`btn btn-primary btn-icon-split mb-0 mt-3 float-right ${text.length ? "" : "disabled"} `}>
+                            <button type="button" className={`btn btn-primary btn-icon-split mb-0 mt-3 float-right ${text.length ? "" : "disabled"} `}
+                                onClick={() => {
+                                    console.log("TITLE :" + title)
+                                    console.log("DESCRIPTION :" + descriptionText)
+                                    console.log("CODE :" + text)
+                                    if(currentLang)
+                                    console.log("LANGUAGE :" + currentLang.split('/').reverse()[0])
+                                }}
+                            >
                                 <span className="text">Add a program</span>
                                 <span className="icon text-white-50">
                                     <i className="fas fa-arrow-right"></i>

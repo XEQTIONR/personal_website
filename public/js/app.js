@@ -37886,65 +37886,60 @@ function NewProgram(props) {
       title = _useState6[0],
       setTitle = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState8 = _slicedToArray(_useState7, 2),
-      ref = _useState8[0],
-      setRef = _useState8[1];
+      editingTitle = _useState8[0],
+      setEditingTitle = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.text),
       _useState10 = _slicedToArray(_useState9, 2),
-      isTooltip = _useState10[0],
-      setIsTooltip = _useState10[1];
+      text = _useState10[0],
+      setText = _useState10[1];
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState12 = _slicedToArray(_useState11, 2),
-      editingTitle = _useState12[0],
-      setEditingTitle = _useState12[1];
+      descriptionText = _useState12[0],
+      setDescriptionText = _useState12[1];
 
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.text),
-      _useState14 = _slicedToArray(_useState13, 2),
-      text = _useState14[0],
-      setText = _useState14[1];
-
-  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState16 = _slicedToArray(_useState15, 2),
-      descriptionText = _useState16[0],
-      setDescriptionText = _useState16[1];
-
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes.map(function (atheme) {
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_themes.map(function (atheme) {
     return {
       value: atheme.theme_id,
       label: atheme.name
     };
   })),
-      _useState18 = _slicedToArray(_useState17, 2),
-      themes = _useState18[0],
-      setThemes = _useState18[1];
+      _useState14 = _slicedToArray(_useState13, 2),
+      themes = _useState14[0],
+      setThemes = _useState14[1];
 
-  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_syntaxes.map(function (language) {
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(editor_syntaxes.map(function (language) {
     return {
       value: language.syntax_id,
       label: language.name
     };
   })),
+      _useState16 = _slicedToArray(_useState15, 2),
+      syntaxes = _useState16[0],
+      setSyntaxes = _useState16[1];
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState18 = _slicedToArray(_useState17, 2),
+      initLang = _useState18[0],
+      setInitLang = _useState18[1];
+
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState20 = _slicedToArray(_useState19, 2),
-      syntaxes = _useState20[0],
-      setSyntaxes = _useState20[1];
+      initTheme = _useState20[0],
+      setInitTheme = _useState20[1];
 
-  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState22 = _slicedToArray(_useState21, 2),
-      initLang = _useState22[0],
-      setInitLang = _useState22[1];
+      currentLang = _useState22[0],
+      setCurrentLang = _useState22[1];
 
-  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       _useState24 = _slicedToArray(_useState23, 2),
-      initTheme = _useState24[0],
-      setInitTheme = _useState24[1];
-
-  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
-      _useState26 = _slicedToArray(_useState25, 2),
-      showEditor = _useState26[0],
-      setShowEditor = _useState26[1];
+      showEditor = _useState24[0],
+      setShowEditor = _useState24[1];
 
   var mdParser = new markdown_it__WEBPACK_IMPORTED_MODULE_3___default.a();
   var tempTitle = false;
@@ -37962,7 +37957,7 @@ function NewProgram(props) {
 
         return false;
       });
-      var local_syntax = props.lang && props.lang != null ? props.lang : "ace/mode/javascript";
+      var local_syntax = props.lang && props.lang != null ? props.lang : syntaxes[0].value;
       local_editor.session.setMode(local_syntax);
       syntaxes.find(function (alang, index) {
         if (alang.value == props.lang) {
@@ -37990,15 +37985,7 @@ function NewProgram(props) {
     } else {
       editor.resize();
       editor.focus();
-      var default_lang_name = 'Javascript';
-      var default_lang = syntaxes.find(function (lang, index) {
-        if (lang.name == default_lang_name) {
-          setInitLang(index);
-          return true;
-        }
-
-        return false;
-      });
+      if (props.lang) editor.session.setMode(props.lang);
       descriptionEditor.resize();
     }
   });
@@ -38013,7 +38000,11 @@ function NewProgram(props) {
   };
 
   var changeLanguage = function changeLanguage(lang) {
-    if (editor != null) editor.session.setMode(lang);
+    if (editor != null) {
+      editor.session.setMode(lang);
+      setCurrentLang(lang);
+    }
+
     if (props.langCallback != undefined) props.langCallback(lang);
   };
 
@@ -38077,7 +38068,6 @@ function NewProgram(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: (editingTitle ? "d-none" : "d-flex") + " col-12 justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    ref: ref,
     title: "Edit title",
     className: "editable-text"
   }, title, "  ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -38121,7 +38111,13 @@ function NewProgram(props) {
     className: "col-md-4 offset-md-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
-    className: "btn btn-primary btn-icon-split mb-0 mt-3 float-right ".concat(text.length ? "" : "disabled", " ")
+    className: "btn btn-primary btn-icon-split mb-0 mt-3 float-right ".concat(text.length ? "" : "disabled", " "),
+    onClick: function onClick() {
+      console.log("TITLE :" + title);
+      console.log("DESCRIPTION :" + descriptionText);
+      console.log("CODE :" + text);
+      if (currentLang) console.log("LANGUAGE :" + currentLang.split('/').reverse()[0]);
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "text"
   }, "Add a program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
