@@ -46175,13 +46175,24 @@ function NewProgram(props) {
       lang: currentLang ? currentLang.split('/').reverse()[0] : syntaxes[initLang].value.split('/').reverse()[0]
     };
     axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(store_API, program_info).then(function (res) {
-      props.toasterCallback({
-        message: "Success",
-        status: res.data.status
-      });
+      switch (res.data.status) {
+        case 'success':
+          props.toasterCallback({
+            message: "Success",
+            status: res.data.status
+          });
+          break;
+
+        case 'error':
+          props.toasterCallback({
+            message: res.data.error,
+            status: res.data.status
+          });
+          break;
+      }
     })["catch"](function (err) {
       props.toasterCallback({
-        message: "Error",
+        message: "Unknown Error",
         status: 'error'
       });
     });
@@ -46421,7 +46432,7 @@ function Programs() {
         addToast(notification.message, {
           appearance: notification.status
         });
-        setShowModal(false);
+        if (notification.status == 'success') setShowModal(false);
       },
       text: text,
       setText: setText,

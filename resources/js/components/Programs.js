@@ -51,7 +51,9 @@ function Programs(){
 
                     toasterCallback={(notification) => {
                         addToast(notification.message, {appearance : notification.status})
-                        setShowModal(false)
+
+                        if(notification.status == 'success')
+                            setShowModal(false)
                     }}
 
                     text={text} setText={setText} lang={lang} theme={theme}

@@ -13,7 +13,7 @@
     height: 100vh;
     width: 100vw;
     position: fixed;
-    z-index: 1051;
+    z-index: 997;
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,.85);
@@ -26,13 +26,13 @@
     position : fixed;
     top: 0;
     left: 0;
-    z-index : 1052;
+    z-index : 998;
     background-color :  rgba(0,0,0,0.1);
 }
 
 .select-field-list{
     position: relative;
-    z-index: 1054 !important;
+    z-index: 999 !important;
     //max-height: 4rem;
     //overflow-y:  default;
 }

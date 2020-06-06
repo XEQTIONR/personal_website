@@ -164,11 +164,24 @@ function NewProgram(props){
         axios.post(store_API, program_info)
             .then(res => {
 
-                props.toasterCallback({message : "Success", status : res.data.status});
+
+                switch (res.data.status)
+                {
+                    case 'success' :
+                        props.toasterCallback({message : "Success", status : res.data.status})
+                        break
+
+                    case 'error' :
+                        props.toasterCallback({message : res.data.error, status : res.data.status})
+                        break
+                }
+
+
+
 
             })
             .catch(err => {
-                props.toasterCallback({message : "Error", status : 'error'});
+                props.toasterCallback({message : "Unknown Error", status : 'error'});
             })
     }
 
