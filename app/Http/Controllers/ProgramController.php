@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
+use App\Program;
+
 class ProgramController extends Controller
 {
     /**
@@ -104,6 +107,23 @@ class ProgramController extends Controller
     public function store(Request $request)
     {
         //
+//        $array = array();
+//
+//        $array['title'] = $request->input('title');
+//        $array['code'] = $request->input('code');
+//
+//        return $array;
+
+        $program = new Program();
+
+        $program->title = $request->input('title');
+        $program->description = $request->input('descriptionText');
+        $program->code = $request->input('code');
+        $program->language = $request->input('lang');
+
+        $program->save();
+
+        return $program;
     }
 
     /**

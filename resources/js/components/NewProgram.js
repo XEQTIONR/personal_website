@@ -161,8 +161,6 @@ function NewProgram(props){
                 : syntaxes[initLang].value.split('/').reverse()[0]
         }
 
-        console.log(program_info)
-
         axios.post(store_API, program_info)
             .then(res => { console.log("RES :" + JSON.stringify(res))})
             .catch(err => {console.log("ERR : " +err)})
