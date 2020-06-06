@@ -2,12 +2,16 @@ import React, {Fragment, useState} from 'react'
 import ReactDOM from 'react-dom'
 import NewProgram from "./NewProgram";
 
+import {ToastProvider, useToasts} from 'react-toast-notifications'
+
 function Programs(){
 
 
 
 
     const MainComponent = () => {
+
+        const { addToast } = useToasts()
 
         const [showModal, setShowModal] = useState(false)
         const [text, setText] = useState("")
@@ -36,15 +40,21 @@ function Programs(){
                     <NewProgram hideCallback={() => {
                         setShowModal(false)
                     }}
-                                themeCallback={(new_theme) => {
-                                    setTheme(new_theme)
-                                }}
 
-                                langCallback={(new_lang) => {
-                                    setLang(new_lang)
-                                }}
+                    themeCallback={(new_theme) => {
+                        setTheme(new_theme)
+                    }}
 
-                                text={text} setText={setText} lang={lang} theme={theme}
+                    langCallback={(new_lang) => {
+                        setLang(new_lang)
+                    }}
+
+                    toasterCallback={(notification) => {
+                        addToast(notification.message, {appearance : notification.status})
+                        setShowModal(false)
+                    }}
+
+                    text={text} setText={setText} lang={lang} theme={theme}
                     /> :
                     ''
                 }
@@ -54,7 +64,9 @@ function Programs(){
     }
 
     return(
-        <MainComponent/>
+        <ToastProvider>
+            <MainComponent/>
+        </ToastProvider>
     )
 
 

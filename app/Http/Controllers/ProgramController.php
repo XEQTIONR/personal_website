@@ -106,24 +106,32 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
-//        $array = array();
-//
-//        $array['title'] = $request->input('title');
-//        $array['code'] = $request->input('code');
-//
-//        return $array;
+        $response = array();
 
-        $program = new Program();
+        try {
+            $program=new Program();
 
-        $program->title = $request->input('title');
-        $program->description = $request->input('descriptionText');
-        $program->code = $request->input('code');
-        $program->language = $request->input('lang');
+            $program->title=$request->input('title');
+            $program->description=$request->input('descriptionText');
+            $program->code=$request->input('code');
+            $program->language=$request->input('lang');
 
-        $program->save();
+            $program->save();
 
-        return $program;
+
+
+            $response['status'] = 'success';
+            $response['data'] = $program;
+        }
+        catch(\Exception $e){
+
+            $response['status'] = 'error';
+            $response['error'] = $e->getMessage();
+
+
+        }
+
+        return $response;
     }
 
     /**

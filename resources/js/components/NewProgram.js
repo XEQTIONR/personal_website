@@ -162,8 +162,14 @@ function NewProgram(props){
         }
 
         axios.post(store_API, program_info)
-            .then(res => { console.log("RES :" + JSON.stringify(res))})
-            .catch(err => {console.log("ERR : " +err)})
+            .then(res => {
+
+                props.toasterCallback({message : "Success", status : res.data.status});
+
+            })
+            .catch(err => {
+                props.toasterCallback({message : "Error", status : 'error'});
+            })
     }
 
 
