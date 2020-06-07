@@ -46356,7 +46356,8 @@ function NewProgram(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./atomic/SelectField */ "./resources/js/components/atomic/SelectField.js");
+/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! markdown-it */ "./node_modules/markdown-it/index.js");
+/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(markdown_it__WEBPACK_IMPORTED_MODULE_1__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -46378,6 +46379,13 @@ function Program(props) {
       editor = _useState2[0],
       setEditor = _useState2[1];
 
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      descriptionText = _useState4[0],
+      setDescriptionText = _useState4[1];
+
+  var mdParser = new markdown_it__WEBPACK_IMPORTED_MODULE_1___default.a();
+
   var helperGetProgramName = function helperGetProgramName(program) {
     var lang = program.language;
     var jang = [];
@@ -46398,6 +46406,7 @@ function Program(props) {
 
       local_editor.session.setMode("ace/mode/" + props.program.language);
       setEditor(local_editor);
+      setDescriptionText(props.program.description);
     }
   });
 
@@ -46425,15 +46434,22 @@ function Program(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row justify-content-center"
   }, props.program.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
+    className: "card-body h-50"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12"
-  }, "Language ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), helperGetProgramName(props.program)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Language")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12"
-  }, "Description ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), props.program.description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-footer h-100"
+  }, helperGetProgramName(props.program)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Description")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12",
+    dangerouslySetInnerHTML: {
+      __html: mdParser.render(descriptionText == null ? '' : '' + descriptionText)
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-footer h-50"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "editor"
   }, props.program.code))));
@@ -46525,7 +46541,6 @@ function Programs() {
         className: "col-12 col-sm-6 col-md-4 col-xl-3 my-2",
         key: programs[i].id,
         onClick: function onClick() {
-          console.log("SET CURRENT PROGRAM index: " + i);
           setCurrentProgram(programs[i]);
           setShowProgramModal(true);
         }

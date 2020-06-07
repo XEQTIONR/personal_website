@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import SelectField from "./atomic/SelectField";
+import MarkdownIt from 'markdown-it'
 
 
 
 function Program(props){
 
     const [editor, setEditor] = useState(null)
+    const [descriptionText, setDescriptionText] = useState(null)
 
+    const mdParser = new MarkdownIt()
 
     const helperGetProgramName = (program) => {
 
@@ -35,6 +37,8 @@ function Program(props){
             //local_editor.setValue(props.program.code)
             local_editor.session.setMode("ace/mode/" + props.program.language)
             setEditor(local_editor)
+
+            setDescriptionText(props.program.description)
         }
 
     })
@@ -63,21 +67,24 @@ function Program(props){
                     </div>
                 </div>
 
-                <div className="card-body">
+                <div className="card-body h-50">
                     <div className="row">
 
                         <div className="col-12">
-                            Language <br/>
+                            <strong>Language</strong>
+                        </div>
+                        <div className="col-12">
                             {helperGetProgramName(props.program)}
                         </div>
                         <div className="col-12">
-                            Description <br />
-                            {props.program.description}
+                            <strong>Description</strong>
+                        </div>
+                        <div className="col-12" dangerouslySetInnerHTML={{__html : mdParser.render(descriptionText == null ? '' : ('' + descriptionText)) }}>
                         </div>
                     </div>
                 </div>
 
-                <div className="card-footer h-100">
+                <div className="card-footer h-50">
                     <div id="editor">
                         {props.program.code}
                     </div>

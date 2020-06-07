@@ -33,7 +33,6 @@ function Programs(){
                 <div className="col-12 col-sm-6 col-md-4 col-xl-3 my-2" key={programs[i].id}
 
                 onClick={() => {
-                    console.log("SET CURRENT PROGRAM index: " + i)
                     setCurrentProgram(programs[i])
                     setShowProgramModal(true)
                 }}
