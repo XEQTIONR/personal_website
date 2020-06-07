@@ -46378,11 +46378,25 @@ function Program(props) {
       editor = _useState2[0],
       setEditor = _useState2[1];
 
+  var helperGetProgramName = function helperGetProgramName(program) {
+    var lang = program.language;
+    var jang = [];
+    lang = lang.replace('_', ' '); //special handling for c/c++
+
+    lang = lang.replace('cpp', 'c++'); //uppercase languages (should do this on front end)
+
+    lang.split(" ").forEach(function (val) {
+      jang.push(val.charAt(0).toUpperCase() + val.substring(1));
+    });
+    return jang.join(" ");
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (editor == null) {
       var local_editor = ace.edit("editor");
       local_editor.setTheme("ace/theme/dracula"); //local_editor.setValue(props.program.code)
 
+      local_editor.session.setMode("ace/mode/" + props.program.language);
       setEditor(local_editor);
     }
   });
@@ -46416,7 +46430,7 @@ function Program(props) {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12"
-  }, "Language ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), props.program.language), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Language ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), helperGetProgramName(props.program)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12"
   }, "Description ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), props.program.description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-footer h-100"

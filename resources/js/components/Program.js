@@ -7,6 +7,24 @@ function Program(props){
 
     const [editor, setEditor] = useState(null)
 
+
+    const helperGetProgramName = (program) => {
+
+        let lang = program.language
+        let jang = []
+
+        lang = lang.replace('_', ' ')
+
+        //special handling for c/c++
+        lang = lang.replace('cpp', 'c++')
+
+        //uppercase languages (should do this on front end)
+        lang.split(" ").forEach((val) =>  { jang.push( val.charAt(0).toUpperCase() + val.substring(1)) })
+
+
+        return jang.join(" ")
+    }
+
     useEffect( () =>{
 
         if(editor == null)
@@ -15,7 +33,7 @@ function Program(props){
 
             local_editor.setTheme("ace/theme/dracula")
             //local_editor.setValue(props.program.code)
-
+            local_editor.session.setMode("ace/mode/" + props.program.language)
             setEditor(local_editor)
         }
 
@@ -50,7 +68,7 @@ function Program(props){
 
                         <div className="col-12">
                             Language <br/>
-                            {props.program.language}
+                            {helperGetProgramName(props.program)}
                         </div>
                         <div className="col-12">
                             Description <br />
