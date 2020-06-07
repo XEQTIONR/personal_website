@@ -28,7 +28,7 @@
 
 
 {{--        const programs = JSON.parse('{!! json_encode($programs) !!}')--}}
-        const programs = {!! $programs !!}
+        const my_programs = {!! $programs !!}
 
     </script>
 @endsection

@@ -17,7 +17,34 @@ function Programs(){
         const [text, setText] = useState("")
         const [lang, setLang] = useState(null)
         const [theme, setTheme] = useState(null)
-        const [programs, setPrograms] = useState(null)
+        const [programs, setPrograms] = useState(my_programs)
+
+
+        let programs_render = []
+
+
+        for(var i=0; i<programs.length; i++)
+        {
+            let program_render =
+
+                <div className="col-12 col-sm-4 col-md-3 col-xl-2 my-2">
+                    <div className="card">
+                        <div className="card-body">
+                            <h3 className="text-center my-4">
+                                <i className="fa fa-code"></i>
+                            </h3>
+                        </div>
+
+
+                    </div>
+                    <h6 className="text-center mt-2">{programs[i].title}</h6>
+
+                </div>
+
+            programs_render.push(program_render)
+        }
+
+
         return (
 
             <Fragment>
@@ -30,8 +57,8 @@ function Programs(){
                     <span className="text">Add a program</span>
                 </button>
 
-                <div className="row">
-
+                <div className="row mt-3">
+                    {programs_render}
                 </div>
 
 

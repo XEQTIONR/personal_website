@@ -46402,10 +46402,29 @@ function Programs() {
         theme = _useState8[0],
         setTheme = _useState8[1];
 
-    var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+    var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(my_programs),
         _useState10 = _slicedToArray(_useState9, 2),
         programs = _useState10[0],
         setPrograms = _useState10[1];
+
+    var programs_render = [];
+
+    for (var i = 0; i < programs.length; i++) {
+      var program_render = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-sm-4 col-md-3 col-xl-2 my-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "text-center my-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-code"
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+        className: "text-center mt-2"
+      }, programs[i].title));
+      programs_render.push(program_render);
+    }
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "button",
@@ -46420,8 +46439,8 @@ function Programs() {
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "text"
     }, "Add a program")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "row"
-    }), showModal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewProgram__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      className: "row mt-3"
+    }, programs_render), showModal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewProgram__WEBPACK_IMPORTED_MODULE_2__["default"], {
       hideCallback: function hideCallback() {
         setShowModal(false);
       },
