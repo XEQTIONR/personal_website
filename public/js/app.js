@@ -46179,7 +46179,8 @@ function NewProgram(props) {
         case 'success':
           props.toasterCallback({
             message: "Success",
-            status: res.data.status
+            status: res.data.status,
+            new_program: res.data.data
           });
           break;
 
@@ -46411,18 +46412,23 @@ function Programs() {
 
     for (var i = 0; i < programs.length; i++) {
       var program_render = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-12 col-sm-4 col-md-3 col-xl-2 my-2"
+        className: "col-12 col-sm-6 col-md-4 col-xl-3 my-2",
+        key: programs[i].id
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
+        className: "card  shadow h-100 py-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "text-center my-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row no-gutters align-items-center"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col mr-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "h5 mb-0 font-weight-bold text-gray-800"
+      }, programs[i].title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-auto"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-code"
-      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
-        className: "text-center mt-2"
-      }, programs[i].title));
+        className: "fa fa-code fa-2x text-gray-300"
+      }))))));
       programs_render.push(program_render);
     }
 
@@ -46451,10 +46457,17 @@ function Programs() {
         setLang(new_lang);
       },
       toasterCallback: function toasterCallback(notification) {
+        if (notification.status == 'success') {
+          setShowModal(false);
+          var local_programs = programs;
+          local_programs.push(notification.new_program);
+          setPrograms(local_programs);
+        }
+
         addToast(notification.message, {
-          appearance: notification.status
+          appearance: notification.status,
+          autoDismiss: true
         });
-        if (notification.status == 'success') setShowModal(false);
       },
       text: text,
       setText: setText,

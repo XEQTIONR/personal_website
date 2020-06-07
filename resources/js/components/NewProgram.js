@@ -168,7 +168,7 @@ function NewProgram(props){
                 switch (res.data.status)
                 {
                     case 'success' :
-                        props.toasterCallback({message : "Success", status : res.data.status})
+                        props.toasterCallback({message : "Success", status : res.data.status, new_program: res.data.data})
                         break
 
                     case 'error' :
