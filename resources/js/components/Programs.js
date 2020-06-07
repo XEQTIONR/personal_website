@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react'
 import ReactDOM from 'react-dom'
-import NewProgram from "./NewProgram";
+import NewProgram from "./NewProgram"
+import Program from "./Program"
 
 import {ToastProvider, useToasts} from 'react-toast-notifications'
 
@@ -14,20 +15,29 @@ function Programs(){
         const { addToast } = useToasts()
 
         const [showModal, setShowModal] = useState(false)
+        const [showProgramModal, setShowProgramModal] = useState(false)
         const [text, setText] = useState("")
         const [lang, setLang] = useState(null)
         const [theme, setTheme] = useState(null)
         const [programs, setPrograms] = useState(my_programs)
 
+        const [currentProgram, setCurrentProgram] = useState(null)
 
         let programs_render = []
 
 
-        for(var i=0; i<programs.length; i++)
+        for(let i=0; i<programs.length; i++)
         {
             let program_render =
 
-                <div className="col-12 col-sm-6 col-md-4 col-xl-3 my-2" key={programs[i].id}>
+                <div className="col-12 col-sm-6 col-md-4 col-xl-3 my-2" key={programs[i].id}
+
+                onClick={() => {
+                    console.log("SET CURRENT PROGRAM index: " + i)
+                    setCurrentProgram(programs[i])
+                    setShowProgramModal(true)
+                }}
+                >
                     <div className="card  shadow h-100 py-2">
                         <div className="card-body">
                             <div className="row no-gutters align-items-center">
@@ -97,6 +107,15 @@ function Programs(){
                     /> :
                     ''
                 }
+
+                {showProgramModal
+                    ? <Program program={currentProgram} hideCallback={() => { setShowProgramModal(false)}}/>
+                    : ''
+                }
+
+
+
+
             </Fragment>
         )
 

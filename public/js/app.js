@@ -46345,6 +46345,90 @@ function NewProgram(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Program.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/Program.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _atomic_SelectField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./atomic/SelectField */ "./resources/js/components/atomic/SelectField.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+function Program(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      editor = _useState2[0],
+      setEditor = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (editor == null) {
+      var local_editor = ace.edit("editor");
+      local_editor.setTheme("ace/theme/dracula"); //local_editor.setValue(props.program.code)
+
+      setEditor(local_editor);
+    }
+  });
+
+  var hideCallback = function hideCallback(e) {
+    e.stopPropagation();
+    if (props.hideCallback != undefined) props.hideCallback();
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal-background d-flex justify-content-center align-items-center",
+    onClick: hideCallback
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card bg-gray-100 m-4",
+    onClick: function onClick(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    style: {
+      overflowY: "show",
+      height: "90vh",
+      minWidth: "33vw"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row justify-content-center"
+  }, props.program.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12"
+  }, "Language ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), props.program.language), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12"
+  }, "Description ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), props.program.description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-footer h-100"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    id: "editor"
+  }, props.program.code))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Program);
+
+/***/ }),
+
 /***/ "./resources/js/components/Programs.js":
 /*!*********************************************!*\
   !*** ./resources/js/components/Programs.js ***!
@@ -46359,8 +46443,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _NewProgram__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NewProgram */ "./resources/js/components/NewProgram.js");
-/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toast-notifications */ "./node_modules/react-toast-notifications/dist/index.js");
-/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Program__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Program */ "./resources/js/components/Program.js");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-toast-notifications */ "./node_modules/react-toast-notifications/dist/index.js");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_4__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -46378,9 +46463,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Programs() {
   var MainComponent = function MainComponent() {
-    var _useToasts = Object(react_toast_notifications__WEBPACK_IMPORTED_MODULE_3__["useToasts"])(),
+    var _useToasts = Object(react_toast_notifications__WEBPACK_IMPORTED_MODULE_4__["useToasts"])(),
         addToast = _useToasts.addToast;
 
     var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
@@ -46388,32 +46474,47 @@ function Programs() {
         showModal = _useState2[0],
         setShowModal = _useState2[1];
 
-    var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+    var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
         _useState4 = _slicedToArray(_useState3, 2),
-        text = _useState4[0],
-        setText = _useState4[1];
+        showProgramModal = _useState4[0],
+        setShowProgramModal = _useState4[1];
 
-    var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+    var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
         _useState6 = _slicedToArray(_useState5, 2),
-        lang = _useState6[0],
-        setLang = _useState6[1];
+        text = _useState6[0],
+        setText = _useState6[1];
 
     var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
         _useState8 = _slicedToArray(_useState7, 2),
-        theme = _useState8[0],
-        setTheme = _useState8[1];
+        lang = _useState8[0],
+        setLang = _useState8[1];
 
-    var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(my_programs),
+    var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
         _useState10 = _slicedToArray(_useState9, 2),
-        programs = _useState10[0],
-        setPrograms = _useState10[1];
+        theme = _useState10[0],
+        setTheme = _useState10[1];
+
+    var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(my_programs),
+        _useState12 = _slicedToArray(_useState11, 2),
+        programs = _useState12[0],
+        setPrograms = _useState12[1];
+
+    var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+        _useState14 = _slicedToArray(_useState13, 2),
+        currentProgram = _useState14[0],
+        setCurrentProgram = _useState14[1];
 
     var programs_render = [];
 
-    for (var i = 0; i < programs.length; i++) {
+    var _loop = function _loop(i) {
       var program_render = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-12 col-sm-6 col-md-4 col-xl-3 my-2",
-        key: programs[i].id
+        key: programs[i].id,
+        onClick: function onClick() {
+          console.log("SET CURRENT PROGRAM index: " + i);
+          setCurrentProgram(programs[i]);
+          setShowProgramModal(true);
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card  shadow h-100 py-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -46430,6 +46531,10 @@ function Programs() {
         className: "fa fa-code fa-2x text-gray-300"
       }))))));
       programs_render.push(program_render);
+    };
+
+    for (var i = 0; i < programs.length; i++) {
+      _loop(i);
     }
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -46473,10 +46578,15 @@ function Programs() {
       setText: setText,
       lang: lang,
       theme: theme
+    }) : '', showProgramModal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Program__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      program: currentProgram,
+      hideCallback: function hideCallback() {
+        setShowProgramModal(false);
+      }
     }) : '');
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_toast_notifications__WEBPACK_IMPORTED_MODULE_3__["ToastProvider"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainComponent, null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_toast_notifications__WEBPACK_IMPORTED_MODULE_4__["ToastProvider"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainComponent, null));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Programs);
