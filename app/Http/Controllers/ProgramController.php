@@ -78,14 +78,14 @@ class ProgramController extends Controller
             array_push($syntaxes, compact('name', 'url', 'syntax_id'));
         }
 
-       // $syntaxes = collect($syntaxes)->sortBy('name')->toArray();
 
-        //dd($syntaxes);
+        $programs = Program::all();
 
+        //dd($programs);
+      //  return $programs;
 
-        //return $themes;
-        //dd($themes);
-        return view('programs', compact('themes', 'syntaxes'));
+//        return view('programs', compact('themes', 'syntaxes', 'programs'));
+        return view('programs', ['themes' => json_encode($themes), 'syntaxes' => json_encode($syntaxes), 'programs' => json_encode($programs)]);
     }
 
     /**

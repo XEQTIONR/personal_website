@@ -21,11 +21,14 @@
     <script>
         const store_API  = "{{ route('programs.store') }}"
 
-        const editor_themes = JSON.parse('{!! json_encode($themes) !!}');
-        const editor_syntaxes = JSON.parse('{!! json_encode($syntaxes) !!}');
+        const editor_themes = {!! $themes !!}
+        const editor_syntaxes = {!! $syntaxes !!}
 
 
-        const programs = JSON.parse('{!! json_encode($programs) !!}')
+
+
+{{--        const programs = JSON.parse('{!! json_encode($programs) !!}')--}}
+        const programs = {!! $programs !!}
 
     </script>
 @endsection

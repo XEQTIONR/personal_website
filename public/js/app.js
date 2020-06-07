@@ -46402,6 +46402,11 @@ function Programs() {
         theme = _useState8[0],
         setTheme = _useState8[1];
 
+    var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+        _useState10 = _slicedToArray(_useState9, 2),
+        programs = _useState10[0],
+        setPrograms = _useState10[1];
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "button",
       className: "btn btn-primary btn-icon-split btn-sm",
@@ -46416,9 +46421,7 @@ function Programs() {
       className: "text"
     }, "Add a program")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "row"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "col-12"
-    })), showModal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewProgram__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), showModal ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewProgram__WEBPACK_IMPORTED_MODULE_2__["default"], {
       hideCallback: function hideCallback() {
         setShowModal(false);
       },

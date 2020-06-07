@@ -17,7 +17,7 @@ function Programs(){
         const [text, setText] = useState("")
         const [lang, setLang] = useState(null)
         const [theme, setTheme] = useState(null)
-
+        const [programs, setPrograms] = useState(null)
         return (
 
             <Fragment>
@@ -31,8 +31,7 @@ function Programs(){
                 </button>
 
                 <div className="row">
-                    <div className="col-12">
-                    </div>
+
                 </div>
 
 
