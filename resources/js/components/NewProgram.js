@@ -23,6 +23,9 @@ function NewProgram(props){
 
     const [showEditor, setShowEditor] = useState(true)
 
+
+    const [files, setFiles] = useState([{name : "untitled", code: "", current: true}]);
+
     const mdParser  =  new MarkdownIt()
 
 
@@ -123,6 +126,24 @@ function NewProgram(props){
         }
     })
 
+    const addFile = () => {
+
+        let current_files = [...files]
+
+        current_files.forEach((file) =>{
+            file.current = false
+        })
+
+        current_files.push({name: "jimmy", code: "", current: true})
+
+        setFiles(current_files)
+    }
+
+    const deleteFile = (i) => {
+
+        setFiles(files.splice(i,1))
+    }
+
     const changeTheme = (theme) =>{
 
         if(editor != null)
@@ -197,6 +218,7 @@ function NewProgram(props){
             props.hideCallback()
     }
 
+
     let title_render = editingTitle ?
         <div className="d-flex col-md-6 justify-content-center">
             <div className="row justify-content-center">
@@ -217,7 +239,6 @@ function NewProgram(props){
         </div>
         :
         ''
-
 
     return (
         <div className="modal-background d-flex justify-content-center align-items-center"
@@ -307,7 +328,24 @@ function NewProgram(props){
 
                 </div>
                 <div className={`card-footer h-100 ${!showEditor ? "d-none" : ""}`}>
-                    <div id="editor">
+
+                    <div className="btn-group tab-header" role="group" aria-label="Basic example">
+
+                        {
+                            files.map( file => {
+
+                            return <button type="button"
+                                           className={`btn btn-outline-dark ${file.current ? 'active' : ''} `}>Untitled</button>
+                            })
+                        }
+
+                        <button type="button" className="btn btn-outline-dark"
+                        onClick={addFile}
+                        >
+                            <i className="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div className="h-90" id="editor">
 
                     </div>
                 </div>

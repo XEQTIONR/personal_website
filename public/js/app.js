@@ -46010,6 +46010,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! markdown-it */ "./node_modules/markdown-it/index.js");
 /* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(markdown_it__WEBPACK_IMPORTED_MODULE_4__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -46099,6 +46107,15 @@ function NewProgram(props) {
       showEditor = _useState24[0],
       setShowEditor = _useState24[1];
 
+  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([{
+    name: "untitled",
+    code: "",
+    current: true
+  }]),
+      _useState26 = _slicedToArray(_useState25, 2),
+      files = _useState26[0],
+      setFiles = _useState26[1];
+
   var mdParser = new markdown_it__WEBPACK_IMPORTED_MODULE_4___default.a();
   var tempTitle = false;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -46148,6 +46165,24 @@ function NewProgram(props) {
       descriptionEditor.resize();
     }
   });
+
+  var addFile = function addFile() {
+    var current_files = _toConsumableArray(files);
+
+    current_files.forEach(function (file) {
+      file.current = false;
+    });
+    current_files.push({
+      name: "jimmy",
+      code: "",
+      current: true
+    });
+    setFiles(current_files);
+  };
+
+  var deleteFile = function deleteFile(i) {
+    setFiles(files.splice(i, 1));
+  };
 
   var changeTheme = function changeTheme(theme) {
     if (editor != null) {
@@ -46326,6 +46361,22 @@ function NewProgram(props) {
   })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-footer h-100 ".concat(!showEditor ? "d-none" : "")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "btn-group tab-header",
+    role: "group",
+    "aria-label": "Basic example"
+  }, files.map(function (file) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "btn btn-outline-dark ".concat(file.current ? 'active' : '', " ")
+    }, "Untitled");
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "btn btn-outline-dark",
+    onClick: addFile
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-plus"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "h-90",
     id: "editor"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-footer h-100 ".concat(!showEditor ? "d-flex" : "d-none")
