@@ -46180,7 +46180,7 @@ function NewProgram(props) {
     current_file.code = text;
     current_file.current = false;
     current_files.push({
-      name: "Untitled",
+      name: "untitled",
       code: "",
       current: true
     });
@@ -46191,13 +46191,18 @@ function NewProgram(props) {
   var deleteFile = function deleteFile(i) {
     var current_files = _toConsumableArray(files);
 
-    current_files.splice(i, 1);
-
-    if (current_files.length) {
+    if (files.length == 1) {
+      current_files[0].name = "untitled";
+      current_files[0].code = "";
       current_files[0].current = true;
-      if (editor) editor.setValue(current_files[0].code);
-    } else {
       if (editor) editor.setValue("");
+    } else {
+      current_files.splice(i, 1);
+      current_files.forEach(function (val) {
+        val.current = false;
+      });
+      current_files[0].current = true;
+      editor.setValue(current_files[0].code);
     }
 
     setFiles(current_files);
@@ -46407,7 +46412,7 @@ function NewProgram(props) {
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "mr-2"
-    }, "Untitled"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    }, file.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fa fa-times",
       onClick: function onClick(e) {
         e.stopPropagation();

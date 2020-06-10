@@ -137,7 +137,7 @@ function NewProgram(props){
         current_file.code = text
         current_file.current = false
 
-        current_files.push({name: "Untitled", code: "", current: true})
+        current_files.push({name: "untitled", code: "", current: true})
 
         setFiles(current_files)
         editor.setValue("")
@@ -147,18 +147,31 @@ function NewProgram(props){
 
         let current_files = [...files]
 
-        current_files.splice(i,1)
-        if(current_files.length)
+
+        if(files.length == 1)
         {
+            current_files[0].name = "untitled"
+            current_files[0].code = ""
             current_files[0].current = true
-            if(editor)
-                editor.setValue(current_files[0].code)
-        }
-        else
-        {
+
             if(editor)
                 editor.setValue("")
         }
+        else
+        {
+
+            current_files.splice(i,1)
+
+            current_files.forEach( val => {
+                val.current = false
+            })
+
+            current_files[0].current = true
+            editor.setValue(current_files[0].code)
+        }
+
+
+
 
         setFiles(current_files)
 
@@ -378,7 +391,7 @@ function NewProgram(props){
                                             }
                                             }
                                     >
-                                        <span className="mr-2">Untitled</span>
+                                        <span className="mr-2">{file.name}</span>
                                         <i className="fa fa-times"
                                         onClick={(e) =>{
                                             e.stopPropagation()
