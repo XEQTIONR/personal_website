@@ -46116,6 +46116,11 @@ function NewProgram(props) {
       files = _useState26[0],
       setFiles = _useState26[1];
 
+  var _useState27 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState28 = _slicedToArray(_useState27, 2),
+      currentTab = _useState28[0],
+      setCurrentTab = _useState28[1];
+
   var mdParser = new markdown_it__WEBPACK_IMPORTED_MODULE_4___default.a();
   var tempTitle = false;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -46172,16 +46177,27 @@ function NewProgram(props) {
     current_files.forEach(function (file) {
       file.current = false;
     });
+    current_files[currentTab].code = editor.getValue();
     current_files.push({
-      name: "jimmy",
+      name: "Untitled",
       code: "",
       current: true
     });
     setFiles(current_files);
+    setCurrentTab(current_files.length - 1);
+    editor.setValue("");
   };
 
   var deleteFile = function deleteFile(i) {
     setFiles(files.splice(i, 1));
+  };
+
+  var selectFile = function selectFile(i) {
+    files.forEach(function (file) {
+      if (file != undefined) file.current = false;
+    });
+    files[i].current = true;
+    editor.setValue(files[i].code);
   };
 
   var changeTheme = function changeTheme(theme) {
@@ -46364,10 +46380,14 @@ function NewProgram(props) {
     className: "btn-group tab-header",
     role: "group",
     "aria-label": "Basic example"
-  }, files.map(function (file) {
+  }, files.map(function (file, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "button",
-      className: "btn btn-outline-dark ".concat(file.current ? 'active' : '', " ")
+      className: "btn btn-outline-dark ".concat(file.current ? 'active' : '', " "),
+      onClick: function onClick() {
+        console.log("selectfile(index) index=" + index);
+        selectFile(index);
+      }
     }, "Untitled");
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",

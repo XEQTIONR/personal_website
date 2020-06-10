@@ -26,6 +26,8 @@ function NewProgram(props){
 
     const [files, setFiles] = useState([{name : "untitled", code: "", current: true}]);
 
+    const [currentTab, setCurrentTab] = useState(0)
+
     const mdParser  =  new MarkdownIt()
 
 
@@ -134,14 +136,30 @@ function NewProgram(props){
             file.current = false
         })
 
-        current_files.push({name: "jimmy", code: "", current: true})
+        current_files[currentTab].code = editor.getValue()
+
+        current_files.push({name: "Untitled", code: "", current: true})
 
         setFiles(current_files)
+
+        setCurrentTab(current_files.length - 1)
+
+        editor.setValue("")
     }
 
     const deleteFile = (i) => {
 
         setFiles(files.splice(i,1))
+    }
+
+    const selectFile = (i) => {
+        files.forEach((file) => {
+            if(file != undefined)
+            file.current = false
+        })
+
+        files[i].current = true
+        editor.setValue(files[i].code)
     }
 
     const changeTheme = (theme) =>{
@@ -332,10 +350,16 @@ function NewProgram(props){
                     <div className="btn-group tab-header" role="group" aria-label="Basic example">
 
                         {
-                            files.map( file => {
+                            files.map( (file, index) => {
 
                             return <button type="button"
-                                           className={`btn btn-outline-dark ${file.current ? 'active' : ''} `}>Untitled</button>
+                                           className={`btn btn-outline-dark ${file.current ? 'active' : ''} `}
+                                            onClick={() =>{
+                                                console.log("selectfile(index) index=" + index)
+                                                selectFile(index)
+                                            }
+                                            }
+                                            >Untitled</button>
                             })
                         }
 
