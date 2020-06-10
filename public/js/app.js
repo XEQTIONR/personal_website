@@ -46189,7 +46189,18 @@ function NewProgram(props) {
   };
 
   var deleteFile = function deleteFile(i) {
-    setFiles(files.splice(i, 1));
+    var current_files = _toConsumableArray(files);
+
+    current_files.splice(i, 1);
+
+    if (current_files.length) {
+      current_files[0].current = true;
+      if (editor) editor.setValue(current_files[0].code);
+    } else {
+      if (editor) editor.setValue("");
+    }
+
+    setFiles(current_files);
   };
 
   var selectFile = function selectFile(i) {
@@ -46394,7 +46405,15 @@ function NewProgram(props) {
         console.log("selectfile(index) index=" + index);
         selectFile(index);
       }
-    }, "Untitled");
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "mr-2"
+    }, "Untitled"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "fa fa-times",
+      onClick: function onClick(e) {
+        e.stopPropagation();
+        deleteFile(index);
+      }
+    }));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
     className: "btn btn-outline-dark",

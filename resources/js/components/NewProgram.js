@@ -145,7 +145,23 @@ function NewProgram(props){
 
     const deleteFile = (i) => {
 
-        setFiles(files.splice(i,1))
+        let current_files = [...files]
+
+        current_files.splice(i,1)
+        if(current_files.length)
+        {
+            current_files[0].current = true
+            if(editor)
+                editor.setValue(current_files[0].code)
+        }
+        else
+        {
+            if(editor)
+                editor.setValue("")
+        }
+
+        setFiles(current_files)
+
     }
 
     const selectFile = (i) => {
@@ -361,7 +377,16 @@ function NewProgram(props){
                                                 selectFile(index)
                                             }
                                             }
-                                            >Untitled</button>
+                                    >
+                                        <span className="mr-2">Untitled</span>
+                                        <i className="fa fa-times"
+                                        onClick={(e) =>{
+                                            e.stopPropagation()
+                                            deleteFile(index)
+
+                                        }}
+                                        ></i>
+                                    </button>
                             })
                         }
 
