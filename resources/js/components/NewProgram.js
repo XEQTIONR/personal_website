@@ -132,18 +132,14 @@ function NewProgram(props){
 
         let current_files = [...files]
 
-        current_files.forEach((file) =>{
-            file.current = false
-        })
+        let current_file = current_files.find(file =>  file.current )
 
-        current_files[currentTab].code = editor.getValue()
+        current_file.code = text
+        current_file.current = false
 
         current_files.push({name: "Untitled", code: "", current: true})
 
         setFiles(current_files)
-
-        setCurrentTab(current_files.length - 1)
-
         editor.setValue("")
     }
 
@@ -153,13 +149,19 @@ function NewProgram(props){
     }
 
     const selectFile = (i) => {
-        files.forEach((file) => {
-            if(file != undefined)
-            file.current = false
-        })
+        //save current file
+        let all_files = [...files]
 
-        files[i].current = true
-        editor.setValue(files[i].code)
+        let current_file = all_files.find((item) => item.current)
+
+        current_file.current = false
+        current_file.code = text
+
+        all_files[i].current = true
+
+        editor.setValue(all_files[i].code)
+
+        setFiles(all_files)
     }
 
     const changeTheme = (theme) =>{

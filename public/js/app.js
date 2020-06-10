@@ -46174,17 +46174,17 @@ function NewProgram(props) {
   var addFile = function addFile() {
     var current_files = _toConsumableArray(files);
 
-    current_files.forEach(function (file) {
-      file.current = false;
+    var current_file = current_files.find(function (file) {
+      return file.current;
     });
-    current_files[currentTab].code = editor.getValue();
+    current_file.code = text;
+    current_file.current = false;
     current_files.push({
       name: "Untitled",
       code: "",
       current: true
     });
     setFiles(current_files);
-    setCurrentTab(current_files.length - 1);
     editor.setValue("");
   };
 
@@ -46193,11 +46193,17 @@ function NewProgram(props) {
   };
 
   var selectFile = function selectFile(i) {
-    files.forEach(function (file) {
-      if (file != undefined) file.current = false;
+    //save current file
+    var all_files = _toConsumableArray(files);
+
+    var current_file = all_files.find(function (item) {
+      return item.current;
     });
-    files[i].current = true;
-    editor.setValue(files[i].code);
+    current_file.current = false;
+    current_file.code = text;
+    all_files[i].current = true;
+    editor.setValue(all_files[i].code);
+    setFiles(all_files);
   };
 
   var changeTheme = function changeTheme(theme) {
