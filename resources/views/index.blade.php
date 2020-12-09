@@ -285,25 +285,38 @@
         <h3 class="text-uppercase text-center mt-3">Technology stack I'm familar with.</h3>
 
         <div class="row justify-content-center">
-            <img class="mx-2 my-3" src="/img/tech_logos/3.png" height="75" data-toggle="tooltip" title="Linux">
-            <img class="mx-2 my-3" src="/img/tech_logos/9.png" height="75" data-toggle="tooltip" title="Apache">
-            <img class="mx-2 my-3" src="/img/tech_logos/10.png" height="75" data-toggle="tooltip" title="PHP">
-            <img class="mx-2 my-3" src="/img/tech_logos/8.png" height="75" data-toggle="tooltip" title="HTML(5)">
-            <img class="mx-2 my-3" src="/img/tech_logos/7.png" height="75" data-toggle="tooltip" title="CSS(3)">
+
             <img class="mx-2 my-3" src="/img/tech_logos/1.png" height="75" data-toggle="tooltip" title="Angular/AngularJS">
-            <img class="mx-2 my-3" src="/img/tech_logos/17.png" height="75" data-toggle="tooltip" title="ReactJS">
-            <img class="mx-2 my-3" src="/img/tech_logos/2.png" height="75" data-toggle="tooltip" title="VueJS">
-            <img class="mx-0 my-3" src="/img/tech_logos/13.png" height="75" data-toggle="tooltip" title="Laravel">
-            <img class="mx-2 my-3" src="/img/tech_logos/14.png" height="75" data-toggle="tooltip" title="Lumen">
-            <img class="mx-1 my-3" src="/img/tech_logos/18.png" height="75" data-toggle="tooltip" title="MySQL">
-            <img class="mx-2 my-3" src="/img/tech_logos/15.png" height="75" data-toggle="tooltip" title="MariaDB">
-            <img class="mx-2 my-3" src="/img/tech_logos/11.png" height="75" data-toggle="tooltip" title="WordPress">
+            <img class="mx-2 my-3" src="/img/tech_logos/9.png" height="75" data-toggle="tooltip" title="Apache">
+            <img class="mx-2 my-3" src="/img/tech_logos/19.png" height="75" data-toggle="tooltip" title="BASH">
             <img class="mx-2 my-3" src="/img/tech_logos/5.png" height="75" data-toggle="tooltip" title="C">
             <img class="mx-2 my-3" src="/img/tech_logos/4.png" height="75" data-toggle="tooltip" title="C++">
+            <img class="mx-2 my-3" src="/img/tech_logos/7.png" height="75" data-toggle="tooltip" title="CSS(3)">
+            <img class="mx-2 my-3" src="/img/tech_logos/20.png" height="75" data-toggle="tooltip" title="Docker">
+            <img class="mx-2 my-3" src="/img/tech_logos/21.png" height="75" data-toggle="tooltip" title="ElasticSearch">
+
+            <img class="mx-2 my-3" src="/img/tech_logos/8.png" height="75" data-toggle="tooltip" title="HTML(5)">
+
             <img class="mx-2 my-3" src="/img/tech_logos/12.png" height="75" data-toggle="tooltip" title="Java">
+            <img class="mx-2 my-3" src="/img/tech_logos/3.png" height="75" data-toggle="tooltip" title="Linux">
+            <img class="mx-0 my-3" src="/img/tech_logos/13.png" height="75" data-toggle="tooltip" title="Laravel">
+            <img class="mx-2 my-3" src="/img/tech_logos/14.png" height="75" data-toggle="tooltip" title="Lumen">
+            <img class="mx-2 my-3" src="/img/tech_logos/15.png" height="75" data-toggle="tooltip" title="MariaDB">
+            <img class="mx-1 my-3" src="/img/tech_logos/18.png" height="75" data-toggle="tooltip" title="MySQL">
+
             <img class="mx-2 my-3" src="/img/tech_logos/6.png" height="75" data-toggle="tooltip" title="Objective C">
+            <img class="mx-2 my-3" src="/img/tech_logos/10.png" height="75" data-toggle="tooltip" title="PHP">
             <img class="mx-2 my-3" src="/img/tech_logos/16.png" height="75" data-toggle="tooltip" title="Python">
-            <img class="mx-2 my-3" src="/img/tech_logos/19.png" height="75" data-toggle="tooltip" title="BASH">
+
+            <img class="mx-2 my-3" src="/img/tech_logos/17.png" height="75" data-toggle="tooltip" title="ReactJS">
+            <img class="mx-2 my-3" src="/img/tech_logos/2.png" height="75" data-toggle="tooltip" title="VueJS">
+
+            <img class="mx-2 my-3" src="/img/tech_logos/11.png" height="75" data-toggle="tooltip" title="WordPress">
+
+
+
+
+
         </div>
 
         <!-- About Section Button -->
