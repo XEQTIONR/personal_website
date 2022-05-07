@@ -143,6 +143,16 @@
         <div class="row justify-content-center align-items-center">
 
 {{--            <div class="w-100 d-flex justify-content-center align-items-center">--}}
+                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#AlleyModal">
+                    <img class="img-fluid" src="{{asset('/img/work_logos/AlleySq.jpeg')}}" alt="">
+
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white">
+                            <i class="fas fa-eye fa-3x"></i>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#RevivalPointModal">
                     <img class="img-fluid" src="{{asset('/img/work_logos/revivalpoint.png')}}" alt="">
 
@@ -442,7 +452,55 @@
 
 
 <!-- Portfolio Modals -->
+<!-- Portfolio Modal 0 -->
+<div class="portfolio-modal modal fade" id="AlleyModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal0Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-12 px-0">
+                            <!-- Portfolio Modal - Title -->
+                            {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
+                            <!-- Icon Divider -->
+                            {{--                            <div class="divider-custom">--}}
+                            {{--                                <div class="divider-custom-line"></div>--}}
+                            {{--                                <div class="divider-custom-icon">--}}
+                            {{--                                    <i class="fas fa-star"></i>--}}
+                            {{--                                </div>--}}
+                            {{--                                <div class="divider-custom-line"></div>--}}
+                            {{--                            </div>--}}
+                            <!-- Portfolio Modal - Image -->
+                            <img class="img-fluid rounded" src="img/work_logos/alleyrect.jpg" alt="">
+                            <!-- Portfolio Modal - Text -->
+                            <p class="mb-4 mt-4 px-3">Alley is a distributed team located across the United States, Canada, and the world. Collectively, we form a professional fellowship that excels at audience research, user experience, visual design, information architecture, data visualization, software engineering, development operations, and technical training to make your product—and process—run more efficiently.</p>
 
+                            <div class="w-100">
+                                <dl class="row  mx-5">
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Current Role :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">Software Developer</dd>
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Contribution :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">
+                                        I was brought in as a Software Developer to work on various websites and applications. Major contributions include work in our various WordPress and Laravel projects.
+                                    </dd>
+                                </dl>
+                            </div>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Portfolio Modal 1 -->
 <div class="portfolio-modal modal fade" id="RevivalPointModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
