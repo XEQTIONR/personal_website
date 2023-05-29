@@ -1103,18 +1103,18 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-4">
-                        <a href="/resume/IshteharHussain_resume.pdf" download >
+                        <a href="/storage/resume/IshteharHussain_resume.pdf" download >
                             <img class="d-block mx-auto file-types" src="https://img.icons8.com/dusk/64/000000/pdf-2.png"/></a>
 
                     </div>
                     <div class="col-4">
 
-                        <a  href="/resume/IshteharHussain_resume.docx" download >
+                        <a  href="/storage/resume/IshteharHussain_resume.docx" download >
                             <img class="d-block mx-auto file-types" src="https://img.icons8.com/dusk/64/000000/word.png"/></a>
                     </div>
                     <div class="col-4">
 
-                        <a  href="/resume/IshteharHussain_resume.txt" download >
+                        <a  href="/storage/resume/IshteharHussain_resume.txt" download >
                             <img class="d-block mx-auto file-types" src="https://img.icons8.com/dusk/64/000000/txt.png"/></a>
                     </div>
                 </div>
