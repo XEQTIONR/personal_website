@@ -283,7 +283,7 @@
         <!-- About Section Content -->
         <div class="row">
             <div class="col-lg-4 ml-auto">
-                <p class="lead">I am a Senior Full-stack developer from Toronto, Ontario. I really enjoy
+                <p class="lead">I am a full-stack developer from Toronto, Ontario. I really enjoy
                 building to innovative web applications. I have worked on a few myself for both work and for personal projects.</p>
             </div>
             <div class="col-lg-4 mr-auto">
@@ -304,6 +304,7 @@
             <img class="mx-2 my-3" src="/img/tech_logos/20.png" height="75" data-toggle="tooltip" title="Docker">
             <img class="mx-2 my-auto" src="/img/tech_logos/22.png" height="55" data-toggle="tooltip" title="ElasticSearch">
 
+            <img class="mx-2 my-3" src="/img/tech_logos/GoLang.svg" height="65" data-toggle="tooltip" title="GoLang">
             <img class="mx-2 my-3" src="/img/tech_logos/8.png" height="75" data-toggle="tooltip" title="HTML(5)">
 
             <img class="mx-2 my-3" src="/img/tech_logos/12.png" height="75" data-toggle="tooltip" title="Java">
