@@ -307,7 +307,7 @@
             <img class="mx-2 my-3" src="/img/tech_logos/GoLang.svg" height="65" data-toggle="tooltip" title="GoLang">
             <img class="mx-2 my-3" src="/img/tech_logos/8.png" height="75" data-toggle="tooltip" title="HTML(5)">
 
-            <img class="mx-2 my-3" src="/img/tech_logos/12.png" height="75" data-toggle="tooltip" title="Java">
+{{--            <img class="mx-2 my-3" src="/img/tech_logos/12.png" height="75" data-toggle="tooltip" title="Java">--}}
             <img class="mx-2 my-3" src="/img/tech_logos/3.png" height="75" data-toggle="tooltip" title="Linux">
             <img class="mx-0 my-3" src="/img/tech_logos/13.png" height="75" data-toggle="tooltip" title="Laravel">
             <img class="mx-2 my-3" src="/img/tech_logos/27.png" height="75" data-toggle="tooltip" title="MariaDB">
