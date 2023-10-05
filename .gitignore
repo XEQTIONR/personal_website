@@ -1,5 +1,8 @@
+/.idea
+/db
 /node_modules
 /public/hot
+/public/resume/
 /public/storage
 /storage/*.key
 /vendor
@@ -10,5 +13,3 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/.idea
-/public/resume/

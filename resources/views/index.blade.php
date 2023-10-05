@@ -118,7 +118,7 @@
         </div>
 
         <!-- Masthead Subheading -->
-        <p class="masthead-subheading font-weight-light mb-0">Full Stack Developer - Backend Engineer - Software Developer </p>
+        <p class="masthead-subheading font-weight-light mb-0">Software Engineer - Full Stack Developer</p>
 
     </div>
 </header>
@@ -142,65 +142,74 @@
         <!-- Portfolio Grid Items -->
         <div class="row justify-content-center align-items-center">
 
-{{--            <div class="w-100 d-flex justify-content-center align-items-center">--}}
-                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#AlleyModal">
-                    <img class="img-fluid" src="{{asset('/img/work_logos/AlleySq.jpeg')}}" alt="">
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#GrinModal">
 
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-eye fa-3x"></i>
-                        </div>
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
                     </div>
-
                 </div>
-                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#RevivalPointModal">
-                    <img class="img-fluid" src="{{asset('/img/work_logos/revivalpoint.png')}}" alt="">
+                <img class="img-fluid" src="{{asset('/img/work_logos/GrinSq.png')}}" alt="">
+            </div>
 
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-eye fa-3x"></i>
-                        </div>
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#AlleyModal">
+                <img class="img-fluid" src="{{asset('/img/work_logos/AlleySq.jpeg')}}" alt="">
+
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
                     </div>
-
                 </div>
 
-                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#LeverageITModal">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-eye fa-3x"></i>
-                        </div>
+            </div>
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#RevivalPointModal">
+                <img class="img-fluid" src="{{asset('/img/work_logos/revivalpoint.png')}}" alt="">
+
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
                     </div>
-                    <img class="img-fluid" src="{{asset('/img/work_logos/leverageit.png')}}" alt="">
                 </div>
 
-                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#AriadModal">
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-eye fa-3x"></i>
-                        </div>
+            </div>
+
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#LeverageITModal">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
                     </div>
-                    <img class="img-fluid" src="{{asset('/img/work_logos/ariad.png')}}" alt="">
                 </div>
+                <img class="img-fluid" src="{{asset('/img/work_logos/leverageit.png')}}" alt="">
+            </div>
 
-                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#IntertracNanoModal">
-
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-eye fa-3x"></i>
-                        </div>
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#AriadModal">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
                     </div>
-                    <img class="img-fluid" src="{{asset('/img/work_logos/intertracnano.bmp')}}" alt="">
                 </div>
+                <img class="img-fluid" src="{{asset('/img/work_logos/ariad.png')}}" alt="">
+            </div>
 
-                <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#YorkUModal">
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#IntertracNanoModal">
 
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            <i class="fas fa-eye fa-3x"></i>
-                        </div>
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
                     </div>
-                    <img class="img-fluid" src="{{asset('/img/work_logos/yorku.png')}}" alt="">
                 </div>
+                <img class="img-fluid" src="{{asset('/img/work_logos/intertracnano.bmp')}}" alt="">
+            </div>
+
+            <div class="companies portfolio-item mx-5"   data-toggle="modal" data-target="#YorkUModal">
+
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white">
+                        <i class="fas fa-eye fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="{{asset('/img/work_logos/yorku.png')}}" alt="">
+            </div>
 {{--            </div>--}}
         </div>
         <!-- /.row -->
@@ -283,7 +292,7 @@
         <!-- About Section Content -->
         <div class="row">
             <div class="col-lg-4 ml-auto">
-                <p class="lead">I am a full-stack developer from Toronto, Ontario. I really enjoy
+                <p class="lead">I am a Software Developer from Toronto, Ontario. I really enjoy
                 building to innovative web applications. I have worked on a few myself for both work and for personal projects.</p>
             </div>
             <div class="col-lg-4 mr-auto">
@@ -445,7 +454,7 @@
 <!-- Copyright Section -->
 <section class="copyright py-4 text-center text-white">
     <div class="container">
-        <small>Copyright &copy; {{config('app.name')}} 2020</small>
+        <small>Copyright &copy; {{config('app.name')}} 2023</small>
     </div>
 </section>
 
@@ -460,32 +469,40 @@
                 <i class="fas fa-times"></i>
               </span>
             </button>
+
             <div class="modal-body text-center px-0 pt-0">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12 px-0">
                             <!-- Portfolio Modal - Title -->
                             {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                            <!-- Icon Divider -->
-                            {{--                            <div class="divider-custom">--}}
-                            {{--                                <div class="divider-custom-line"></div>--}}
-                            {{--                                <div class="divider-custom-icon">--}}
-                            {{--                                    <i class="fas fa-star"></i>--}}
-                            {{--                                </div>--}}
-                            {{--                                <div class="divider-custom-line"></div>--}}
-                            {{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded" src="img/work_logos/alleyrect.jpg" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
                             <p class="mb-4 mt-4 px-3">Alley is a distributed team located across the United States, Canada, and the world. Collectively, we form a professional fellowship that excels at audience research, user experience, visual design, information architecture, data visualization, software engineering, development operations, and technical training to make your product—and process—run more efficiently.</p>
 
                             <div class="w-100">
                                 <dl class="row  mx-5">
-                                    <dt class="col-md-4 col-lg-3 text-md-right">My Current Role :</dt>
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
                                     <dd class="col-md-8 col-lg-9 text-md-left">Software Developer</dd>
                                     <dt class="col-md-4 col-lg-3 text-md-right">My Contribution :</dt>
                                     <dd class="col-md-8 col-lg-9 text-md-left">
-                                        I was brought in as a Software Developer to work on various websites and applications. Major contributions include work in our various WordPress and Laravel projects.
+                                        I was brought in as a Software Developer to work on various websites and applications.
+                                        Major contributions include work in our various client and internal WordPress and Laravel projects.
+                                    </dd>
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Impact :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">
+                                        Worked on the initial development and deployment of various start up initiatives building novel solutions
+                                        to support business goals as well as on larger projects for more established clients such as the New York
+                                        Post, American Alliance of Museums, San-Francisco Standard.
                                     </dd>
                                 </dl>
                             </div>
@@ -513,18 +530,16 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12 px-0">
-                            <!-- Portfolio Modal - Title -->
-{{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                            <!-- Icon Divider -->
-{{--                            <div class="divider-custom">--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                                <div class="divider-custom-icon">--}}
-{{--                                    <i class="fas fa-star"></i>--}}
-{{--                                </div>--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded" src="img/work_logos/revivalpoint_lg.png" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
                             <p class="mb-4 mt-4 px-3">A company that sells various health supplements exclusively through their online stores.</p>
 
@@ -599,18 +614,23 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12 px-0">
-                            <!-- Portfolio Modal - Title -->
-                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                        <!-- Icon Divider -->
-
                             <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded " src="img/work_logos/leverageit_lg.png" alt="">
-
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
-
-                            <p class="mb-4 px-3 mt-4">A software development company that works with start-ups.</p>
-
-                                                        <div class="w-100">
+                            <p class="mb-4 px-3 mt-4">
+                                A results-driven agency that helps startups and companies build out
+                                their technology and websites. Having worked with over 200 companies globally and advising
+                                over 50 startups.
+                            </p>
+                            <div class="w-100">
                             <dl class="row  mx-5">
                                 <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
                                 <dd class="col-md-8 col-lg-9 text-md-left">Senior Software Developer</dd>
@@ -695,21 +715,20 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12 px-0">
-                            <!-- Portfolio Modal - Title -->
-                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                        <!-- Icon Divider -->
-{{--                            <div class="divider-custom">--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                                <div class="divider-custom-icon">--}}
-{{--                                    <i class="fas fa-star"></i>--}}
-{{--                                </div>--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded" src="img/work_logos/ariad-lg.jpg" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
-
-                            <p class="mb-4 mt-4 px-3">A digital marketing company that works with client data.</p>
+                            <p class="mb-4 mt-4 px-3">
+                                Ariad was a marketing agency focused on creating content that motivates, creative that inspires, and strategy.
+                            </p>
 
                             <div class="w-100">
                                 <dl class="row  mx-5">
@@ -735,9 +754,6 @@
                                             </li>
                                         </ul>
                                     </dd>
-                                    {{--                                </dl>--}}
-
-                                    {{--                                <dl class="row mx-5">--}}
                                 </dl>
                             </div>
 
@@ -767,22 +783,20 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12 px-0">
-                            <!-- Portfolio Modal - Title -->
-                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                        <!-- Icon Divider -->
-{{--                            <div class="divider-custom">--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                                <div class="divider-custom-icon">--}}
-{{--                                    <i class="fas fa-star"></i>--}}
-{{--                                </div>--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded" src="img/work_logos/intertracnano_lg.png" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
 
-                            <p class="mb-4 mt-4 px-3">A personal client for whom I built a custom stock management tool.
-
+                            <p class="mb-4 mt-4 px-3">
+                                A personal client for whom I built a custom stock management tool.
                             </p>
 
                             <div class="w-100 mt-4">
@@ -812,9 +826,6 @@
                                             </li>
                                         </ul>
                                     </dd>
-                                    {{--                                </dl>--}}
-
-                                    {{--                                <dl class="row mx-5">--}}
                                 </dl>
                             </div>
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -842,20 +853,20 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <!-- Portfolio Modal - Title -->
-                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                        <!-- Icon Divider -->
-{{--                            <div class="divider-custom">--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                                <div class="divider-custom-icon">--}}
-{{--                                    <i class="fas fa-star"></i>--}}
-{{--                                </div>--}}
-{{--                                <div class="divider-custom-line"></div>--}}
-{{--                            </div>--}}
                             <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded" src="img/work_logos/yorku_lg.png" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
-
+                            <p class="mb-4 mt-4 px-3">
+                                York is a leading modern, multi-campus, urban University located in Toronto, Canada.
+                            </p>
                             <div class="w-100 mt-4">
                                 <dl class="row  mx-5">
                                     <dt class="col-md-4 col-lg-3 text-md-right">My Role :</dt>
@@ -875,14 +886,8 @@
                                             </li>
                                         </ul>
                                     </dd>
-                                    {{--                                </dl>--}}
-
-                                    {{--                                <dl class="row mx-5">--}}
                                 </dl>
                             </div>
-
-
-
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
@@ -909,18 +914,16 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <!-- Portfolio Modal - Title -->
-                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                        <!-- Icon Divider -->
-                        {{--                            <div class="divider-custom">--}}
-                        {{--                                <div class="divider-custom-line"></div>--}}
-                        {{--                                <div class="divider-custom-icon">--}}
-                        {{--                                    <i class="fas fa-star"></i>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="divider-custom-line"></div>--}}
-                        {{--                            </div>--}}
-                        <!-- Portfolio Modal - Image -->
+                            <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded my-3" src="img/project_logos/DGLcolorLogo.png" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
                             <p>This is an organization that I co-founded in 2005. DaGameLeague (DGL) is the first online gaming community
                             in Bangladesh. This is a non-profit organization that has existed in various forms since its inception. In
@@ -972,22 +975,17 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <!-- Portfolio Modal - Title -->
-                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                        <!-- Icon Divider -->
-                        {{--                            <div class="divider-custom">--}}
-                        {{--                                <div class="divider-custom-line"></div>--}}
-                        {{--                                <div class="divider-custom-icon">--}}
-                        {{--                                    <i class="fas fa-star"></i>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="divider-custom-line"></div>--}}
-                        {{--                            </div>--}}
                         <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded my-5" src="img/project_logos/logo1920.png" alt="">
+                            <img class="img-fluid rounded mt-5 mb-1" src="img/project_logos/logo1920.png" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
-
-
-
                             <p>Stripekart was start-up idea that I was working on. The goal was to provide fulfillment
                                 services to remote areas where popular online marketplaces such as Amazon or Ebay do not
                                 deliver. I was in the process of developing prototypes for the iOS and Andriod apps
@@ -1037,20 +1035,17 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <!-- Portfolio Modal - Title -->
-                        {{--                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Logx Cabin</h2>--}}
-                        <!-- Icon Divider -->
-                        {{--                            <div class="divider-custom">--}}
-                        {{--                                <div class="divider-custom-line"></div>--}}
-                        {{--                                <div class="divider-custom-icon">--}}
-                        {{--                                    <i class="fas fa-star"></i>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="divider-custom-line"></div>--}}
-                        {{--                            </div>--}}
-                        <!-- Portfolio Modal - Image -->
+                            <!-- Portfolio Modal - Image -->
                             <img class="img-fluid rounded" src="img/project_logos/cs_lg.png" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
                             <!-- Portfolio Modal - Text -->
-
                             <p class="mt-4">
                                 A social networking platform for iOS that I was working on as a personal project while
                                 I was a university student. This served me as an introduction to mobile development and
@@ -1075,9 +1070,6 @@
                                 </div>
 
                             </div>
-
-
-
                             <button class="btn btn-primary" href="#" data-dismiss="modal">
                                 <i class="fas fa-times fa-fw"></i>
                                 Close Window
@@ -1090,7 +1082,57 @@
     </div>
 </div>
 
-
+<!-- GrinModal -->
+<div class="portfolio-modal modal fade" id="GrinModal" tabindex="-1" role="dialog" aria-labelledby="GrinModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            <div class="modal-body text-center px-0 pt-0">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-12 px-0">
+                            <!-- Portfolio Modal - Image -->
+                            <img class="img-fluid rounded" src="img/work_logos/grin.jpeg" alt="">
+                            <!-- Icon Divider -->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Text -->
+                            <p class="px-3 my-4">
+                                GRIN is the pioneer behind the world’s first Creator Management platform, designed for
+                                the next generation of brands who recognize that, in the creator economy, authenticity
+                                is everything. Our platform supports every brand’s journey to connecting with consumers
+                                through authentic creator relationships and is listed #1 across all top review sites
+                                including Capterra, G2 Crowd and Influencer Marketing Hub. Thousands of the world’s
+                                fastest-growing brands – including SKIMS, Warby Parker, Allbirds, Mejuri, and MVMT –
+                                use GRIN to make creators feel like trusted, empowered partners and work with them to
+                                build their brands into household names. Together, we are revolutionizing the Creator Economy.
+                            </p>
+                            <div class="w-100 mt-4">
+                                <dl class="row  mx-5">
+                                    <dt class="col-md-4 col-lg-3 text-md-right">My Current Role :</dt>
+                                    <dd class="col-md-8 col-lg-9 text-md-left">Senior Software Engineer</dd>
+                                </dl>
+                            </div>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Close Window
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal " tabindex="-1" role="dialog" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -1156,10 +1198,6 @@
 
 <script>
     (function($){
-
-
-
-        console.log("KUSTOM KODE");
 
         var images = [];
 
