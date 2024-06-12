@@ -329,7 +329,7 @@
             <img class="mx-2 my-3" src="/img/tech_logos/10.png" height="75" data-toggle="tooltip" title="PHP">
 
             <img class="mx-2 my-3" src="/img/tech_logos/17.png" height="75" data-toggle="tooltip" title="ReactJS">
-            <img class="mx-2 my-3" src="/img/tech_logos/swift.png" height="70" data-toggle="tooltip" title="Swift">
+            <img class="mx-2 mt-4" src="/img/tech_logos/swift.png" height="70" data-toggle="tooltip" title="Swift">
             <img class="mx-2 my-auto" src="/img/tech_logos/25.png" height="55" data-toggle="tooltip" title="VueJS">
 
             <img class="mx-2 my-3" src="/img/tech_logos/11.png" height="75" data-toggle="tooltip" title="WordPress">
