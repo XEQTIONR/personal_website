@@ -321,7 +321,9 @@
             <img class="mx-0 my-3" src="/img/tech_logos/13.png" height="75" data-toggle="tooltip" title="Laravel">
             <img class="mx-2 my-3" src="/img/tech_logos/27.png" height="75" data-toggle="tooltip" title="MariaDB">
             <img class="mx-1 my-auto" src="/img/tech_logos/23.png" height="55" data-toggle="tooltip" title="MySQL">
+            <img class="mx-2 my-3" src="/img/tech_logos/mongo.png" height="75" data-toggle="tooltip" title="Mongo DB">
 
+            <img class="mx-2 my-3" src="/img/tech_logos/nginx.png" height="75" data-toggle="tooltip" title="Nginx">
             <img class="mx-2 my-3" src="/img/tech_logos/26.png" height="75" data-toggle="tooltip" title="npm">
             <img class="mx-2 my-3" src="/img/tech_logos/6.png" height="75" data-toggle="tooltip" title="Objective C">
             <img class="mx-2 my-3" src="/img/tech_logos/10.png" height="75" data-toggle="tooltip" title="PHP">
